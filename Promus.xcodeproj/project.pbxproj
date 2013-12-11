@@ -13,6 +13,47 @@
 		52A2774D1858913B00B102FF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 52A2774B1858913B00B102FF /* Credits.rtf */; };
 		52A277501858913B00B102FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A2774F1858913B00B102FF /* AppDelegate.m */; };
 		52A277531858913B00B102FF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A277511858913B00B102FF /* MainMenu.xib */; };
+		52A27765185891FA00B102FF /* MenuCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A2775E185891FA00B102FF /* MenuCalls.m */; };
+		52A27766185891FA00B102FF /* PromusMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A27760185891FA00B102FF /* PromusMenu.m */; };
+		52A27767185891FA00B102FF /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A27762185891FA00B102FF /* PreferencesController.m */; };
+		52A27768185891FA00B102FF /* Tasks.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A27764185891FA00B102FF /* Tasks.m */; };
+		52A277761858920500B102FF /* Temps in Resources */ = {isa = PBXBuildFile; fileRef = 52A277691858920500B102FF /* Temps */; };
+		52A277771858920500B102FF /* ** Swapfile.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A2776A1858920500B102FF /* ** Swapfile.sh */; };
+		52A277781858920500B102FF /* CPUUsage.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A2776B1858920500B102FF /* CPUUsage.sh */; };
+		52A277791858920500B102FF /* Processes.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A2776C1858920500B102FF /* Processes.sh */; };
+		52A2777A1858920500B102FF /* DateTime.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A2776D1858920500B102FF /* DateTime.sh */; };
+		52A2777B1858920500B102FF /* IPAddress.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A2776E1858920500B102FF /* IPAddress.sh */; };
+		52A2777C1858920500B102FF /* MailIP.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A2776F1858920500B102FF /* MailIP.sh */; };
+		52A2777D1858920500B102FF /* Temperature.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A277701858920500B102FF /* Temperature.sh */; };
+		52A2777E1858920500B102FF /* Uptime.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A277711858920500B102FF /* Uptime.sh */; };
+		52A2777F1858920500B102FF /* UsedSpace.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A277721858920500B102FF /* UsedSpace.sh */; };
+		52A277801858920500B102FF /* Nice.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A277731858920500B102FF /* Nice.sh */; };
+		52A277811858920500B102FF /* CPU.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A277741858920500B102FF /* CPU.sh */; };
+		52A277821858920500B102FF /* RAM.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52A277751858920500B102FF /* RAM.sh */; };
+		52A277991858926700B102FF /* Activity Monitor.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A277831858926700B102FF /* Activity Monitor.png */; };
+		52A2779A1858926700B102FF /* Batch Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A277841858926700B102FF /* Batch Button.png */; };
+		52A2779B1858926700B102FF /* Batch.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A277851858926700B102FF /* Batch.tiff */; };
+		52A2779C1858926700B102FF /* BigLock.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A277861858926700B102FF /* BigLock.png */; };
+		52A2779D1858926700B102FF /* Clean Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A277871858926700B102FF /* Clean Button.png */; };
+		52A2779E1858926700B102FF /* Clean.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A277881858926700B102FF /* Clean.tiff */; };
+		52A2779F1858926700B102FF /* Console.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A277891858926700B102FF /* Console.tiff */; };
+		52A277A01858926700B102FF /* Deep Batch Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A2778A1858926700B102FF /* Deep Batch Button.png */; };
+		52A277A11858926700B102FF /* Deep Batch.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A2778B1858926700B102FF /* Deep Batch.png */; };
+		52A277A21858926700B102FF /* Deep Clean.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A2778C1858926700B102FF /* Deep Clean.png */; };
+		52A277A31858926700B102FF /* General.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A2778D1858926700B102FF /* General.tiff */; };
+		52A277A41858926700B102FF /* Maintance.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A2778E1858926700B102FF /* Maintance.png */; };
+		52A277A51858926700B102FF /* Maintenance Button Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A2778F1858926700B102FF /* Maintenance Button Pressed.png */; };
+		52A277A61858926700B102FF /* Maintenance Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A277901858926700B102FF /* Maintenance Button.png */; };
+		52A277A71858926700B102FF /* Picture 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A277911858926700B102FF /* Picture 1.png */; };
+		52A277A81858926700B102FF /* Reports.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A277921858926700B102FF /* Reports.tiff */; };
+		52A277A91858926700B102FF /* Security.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A277931858926700B102FF /* Security.tiff */; };
+		52A277AA1858926700B102FF /* SoftwareUpdates.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A277941858926700B102FF /* SoftwareUpdates.tiff */; };
+		52A277AB1858926700B102FF /* StatusMenuIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A277951858926700B102FF /* StatusMenuIcon.tiff */; };
+		52A277AC1858926700B102FF /* StatusMenuIconAlt.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A277961858926700B102FF /* StatusMenuIconAlt.tiff */; };
+		52A277AD1858926700B102FF /* Timer.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A277971858926700B102FF /* Timer.tiff */; };
+		52A277AE1858926700B102FF /* USE icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 52A277981858926700B102FF /* USE icon.icns */; };
+		52A277B11858927E00B102FF /* LockClose.aif in Resources */ = {isa = PBXBuildFile; fileRef = 52A277AF1858927E00B102FF /* LockClose.aif */; };
+		52A277B21858927E00B102FF /* LockOpen.aif in Resources */ = {isa = PBXBuildFile; fileRef = 52A277B01858927E00B102FF /* LockOpen.aif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +70,51 @@
 		52A2774E1858913B00B102FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		52A2774F1858913B00B102FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		52A277521858913B00B102FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		52A2775D185891FA00B102FF /* MenuCalls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCalls.h; sourceTree = "<group>"; };
+		52A2775E185891FA00B102FF /* MenuCalls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCalls.m; sourceTree = "<group>"; };
+		52A2775F185891FA00B102FF /* PromusMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromusMenu.h; sourceTree = "<group>"; };
+		52A27760185891FA00B102FF /* PromusMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromusMenu.m; sourceTree = "<group>"; };
+		52A27761185891FA00B102FF /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		52A27762185891FA00B102FF /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		52A27763185891FA00B102FF /* Tasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tasks.h; sourceTree = "<group>"; };
+		52A27764185891FA00B102FF /* Tasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tasks.m; sourceTree = "<group>"; };
+		52A277691858920500B102FF /* Temps */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = Temps; sourceTree = "<group>"; };
+		52A2776A1858920500B102FF /* ** Swapfile.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "** Swapfile.sh"; sourceTree = "<group>"; };
+		52A2776B1858920500B102FF /* CPUUsage.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CPUUsage.sh; sourceTree = "<group>"; };
+		52A2776C1858920500B102FF /* Processes.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = Processes.sh; sourceTree = "<group>"; };
+		52A2776D1858920500B102FF /* DateTime.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = DateTime.sh; sourceTree = "<group>"; };
+		52A2776E1858920500B102FF /* IPAddress.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = IPAddress.sh; sourceTree = "<group>"; };
+		52A2776F1858920500B102FF /* MailIP.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = MailIP.sh; sourceTree = "<group>"; };
+		52A277701858920500B102FF /* Temperature.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = Temperature.sh; sourceTree = "<group>"; };
+		52A277711858920500B102FF /* Uptime.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = Uptime.sh; sourceTree = "<group>"; };
+		52A277721858920500B102FF /* UsedSpace.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = UsedSpace.sh; sourceTree = "<group>"; };
+		52A277731858920500B102FF /* Nice.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = Nice.sh; sourceTree = "<group>"; };
+		52A277741858920500B102FF /* CPU.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CPU.sh; sourceTree = "<group>"; };
+		52A277751858920500B102FF /* RAM.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RAM.sh; sourceTree = "<group>"; };
+		52A277831858926700B102FF /* Activity Monitor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Activity Monitor.png"; sourceTree = "<group>"; };
+		52A277841858926700B102FF /* Batch Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Batch Button.png"; sourceTree = "<group>"; };
+		52A277851858926700B102FF /* Batch.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Batch.tiff; sourceTree = "<group>"; };
+		52A277861858926700B102FF /* BigLock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BigLock.png; sourceTree = "<group>"; };
+		52A277871858926700B102FF /* Clean Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clean Button.png"; sourceTree = "<group>"; };
+		52A277881858926700B102FF /* Clean.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Clean.tiff; sourceTree = "<group>"; };
+		52A277891858926700B102FF /* Console.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Console.tiff; sourceTree = "<group>"; };
+		52A2778A1858926700B102FF /* Deep Batch Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deep Batch Button.png"; sourceTree = "<group>"; };
+		52A2778B1858926700B102FF /* Deep Batch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deep Batch.png"; sourceTree = "<group>"; };
+		52A2778C1858926700B102FF /* Deep Clean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deep Clean.png"; sourceTree = "<group>"; };
+		52A2778D1858926700B102FF /* General.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = General.tiff; sourceTree = "<group>"; };
+		52A2778E1858926700B102FF /* Maintance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Maintance.png; sourceTree = "<group>"; };
+		52A2778F1858926700B102FF /* Maintenance Button Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Maintenance Button Pressed.png"; sourceTree = "<group>"; };
+		52A277901858926700B102FF /* Maintenance Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Maintenance Button.png"; sourceTree = "<group>"; };
+		52A277911858926700B102FF /* Picture 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Picture 1.png"; sourceTree = "<group>"; };
+		52A277921858926700B102FF /* Reports.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Reports.tiff; sourceTree = "<group>"; };
+		52A277931858926700B102FF /* Security.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Security.tiff; sourceTree = "<group>"; };
+		52A277941858926700B102FF /* SoftwareUpdates.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SoftwareUpdates.tiff; sourceTree = "<group>"; };
+		52A277951858926700B102FF /* StatusMenuIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = StatusMenuIcon.tiff; sourceTree = "<group>"; };
+		52A277961858926700B102FF /* StatusMenuIconAlt.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = StatusMenuIconAlt.tiff; sourceTree = "<group>"; };
+		52A277971858926700B102FF /* Timer.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Timer.tiff; sourceTree = "<group>"; };
+		52A277981858926700B102FF /* USE icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "USE icon.icns"; sourceTree = "<group>"; };
+		52A277AF1858927E00B102FF /* LockClose.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = LockClose.aif; sourceTree = "<group>"; };
+		52A277B01858927E00B102FF /* LockOpen.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = LockOpen.aif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +170,10 @@
 			children = (
 				52A2774E1858913B00B102FF /* AppDelegate.h */,
 				52A2774F1858913B00B102FF /* AppDelegate.m */,
+				52A27759185891B500B102FF /* Classes */,
+				52A2775A185891BE00B102FF /* Scripts */,
+				52A2775B185891CF00B102FF /* Images */,
+				52A2775C185891E400B102FF /* Sounds */,
 				52A277511858913B00B102FF /* MainMenu.xib */,
 				52A277431858913B00B102FF /* Supporting Files */,
 			);
@@ -100,6 +190,79 @@
 				52A2774B1858913B00B102FF /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52A27759185891B500B102FF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				52A2775D185891FA00B102FF /* MenuCalls.h */,
+				52A2775E185891FA00B102FF /* MenuCalls.m */,
+				52A2775F185891FA00B102FF /* PromusMenu.h */,
+				52A27760185891FA00B102FF /* PromusMenu.m */,
+				52A27761185891FA00B102FF /* PreferencesController.h */,
+				52A27762185891FA00B102FF /* PreferencesController.m */,
+				52A27763185891FA00B102FF /* Tasks.h */,
+				52A27764185891FA00B102FF /* Tasks.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		52A2775A185891BE00B102FF /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				52A277691858920500B102FF /* Temps */,
+				52A2776A1858920500B102FF /* ** Swapfile.sh */,
+				52A2776B1858920500B102FF /* CPUUsage.sh */,
+				52A2776C1858920500B102FF /* Processes.sh */,
+				52A2776D1858920500B102FF /* DateTime.sh */,
+				52A2776E1858920500B102FF /* IPAddress.sh */,
+				52A2776F1858920500B102FF /* MailIP.sh */,
+				52A277701858920500B102FF /* Temperature.sh */,
+				52A277711858920500B102FF /* Uptime.sh */,
+				52A277721858920500B102FF /* UsedSpace.sh */,
+				52A277731858920500B102FF /* Nice.sh */,
+				52A277741858920500B102FF /* CPU.sh */,
+				52A277751858920500B102FF /* RAM.sh */,
+			);
+			name = Scripts;
+			sourceTree = "<group>";
+		};
+		52A2775B185891CF00B102FF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				52A277831858926700B102FF /* Activity Monitor.png */,
+				52A277841858926700B102FF /* Batch Button.png */,
+				52A277851858926700B102FF /* Batch.tiff */,
+				52A277861858926700B102FF /* BigLock.png */,
+				52A277871858926700B102FF /* Clean Button.png */,
+				52A277881858926700B102FF /* Clean.tiff */,
+				52A277891858926700B102FF /* Console.tiff */,
+				52A2778A1858926700B102FF /* Deep Batch Button.png */,
+				52A2778B1858926700B102FF /* Deep Batch.png */,
+				52A2778C1858926700B102FF /* Deep Clean.png */,
+				52A2778D1858926700B102FF /* General.tiff */,
+				52A2778E1858926700B102FF /* Maintance.png */,
+				52A2778F1858926700B102FF /* Maintenance Button Pressed.png */,
+				52A277901858926700B102FF /* Maintenance Button.png */,
+				52A277911858926700B102FF /* Picture 1.png */,
+				52A277921858926700B102FF /* Reports.tiff */,
+				52A277931858926700B102FF /* Security.tiff */,
+				52A277941858926700B102FF /* SoftwareUpdates.tiff */,
+				52A277951858926700B102FF /* StatusMenuIcon.tiff */,
+				52A277961858926700B102FF /* StatusMenuIconAlt.tiff */,
+				52A277971858926700B102FF /* Timer.tiff */,
+				52A277981858926700B102FF /* USE icon.icns */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		52A2775C185891E400B102FF /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				52A277AF1858927E00B102FF /* LockClose.aif */,
+				52A277B01858927E00B102FF /* LockOpen.aif */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +319,43 @@
 				52A277471858913B00B102FF /* InfoPlist.strings in Resources */,
 				52A2774D1858913B00B102FF /* Credits.rtf in Resources */,
 				52A277531858913B00B102FF /* MainMenu.xib in Resources */,
+				52A277761858920500B102FF /* Temps in Resources */,
+				52A277771858920500B102FF /* ** Swapfile.sh in Resources */,
+				52A277781858920500B102FF /* CPUUsage.sh in Resources */,
+				52A277791858920500B102FF /* Processes.sh in Resources */,
+				52A2777A1858920500B102FF /* DateTime.sh in Resources */,
+				52A2777B1858920500B102FF /* IPAddress.sh in Resources */,
+				52A2777C1858920500B102FF /* MailIP.sh in Resources */,
+				52A2777D1858920500B102FF /* Temperature.sh in Resources */,
+				52A2777E1858920500B102FF /* Uptime.sh in Resources */,
+				52A2777F1858920500B102FF /* UsedSpace.sh in Resources */,
+				52A277801858920500B102FF /* Nice.sh in Resources */,
+				52A277811858920500B102FF /* CPU.sh in Resources */,
+				52A277821858920500B102FF /* RAM.sh in Resources */,
+				52A277991858926700B102FF /* Activity Monitor.png in Resources */,
+				52A2779A1858926700B102FF /* Batch Button.png in Resources */,
+				52A2779B1858926700B102FF /* Batch.tiff in Resources */,
+				52A2779C1858926700B102FF /* BigLock.png in Resources */,
+				52A2779D1858926700B102FF /* Clean Button.png in Resources */,
+				52A2779E1858926700B102FF /* Clean.tiff in Resources */,
+				52A2779F1858926700B102FF /* Console.tiff in Resources */,
+				52A277A01858926700B102FF /* Deep Batch Button.png in Resources */,
+				52A277A11858926700B102FF /* Deep Batch.png in Resources */,
+				52A277A21858926700B102FF /* Deep Clean.png in Resources */,
+				52A277A31858926700B102FF /* General.tiff in Resources */,
+				52A277A41858926700B102FF /* Maintance.png in Resources */,
+				52A277A51858926700B102FF /* Maintenance Button Pressed.png in Resources */,
+				52A277A61858926700B102FF /* Maintenance Button.png in Resources */,
+				52A277A71858926700B102FF /* Picture 1.png in Resources */,
+				52A277A81858926700B102FF /* Reports.tiff in Resources */,
+				52A277A91858926700B102FF /* Security.tiff in Resources */,
+				52A277AA1858926700B102FF /* SoftwareUpdates.tiff in Resources */,
+				52A277AB1858926700B102FF /* StatusMenuIcon.tiff in Resources */,
+				52A277AC1858926700B102FF /* StatusMenuIconAlt.tiff in Resources */,
+				52A277AD1858926700B102FF /* Timer.tiff in Resources */,
+				52A277AE1858926700B102FF /* USE icon.icns in Resources */,
+				52A277B11858927E00B102FF /* LockClose.aif in Resources */,
+				52A277B21858927E00B102FF /* LockOpen.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +368,10 @@
 			files = (
 				52A277491858913B00B102FF /* main.m in Sources */,
 				52A277501858913B00B102FF /* AppDelegate.m in Sources */,
+				52A27765185891FA00B102FF /* MenuCalls.m in Sources */,
+				52A27766185891FA00B102FF /* PromusMenu.m in Sources */,
+				52A27767185891FA00B102FF /* PreferencesController.m in Sources */,
+				52A27768185891FA00B102FF /* Tasks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,11 +467,13 @@
 		52A277571858913B00B102FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Promus/Promus-Prefix.pch";
 				INFOPLIST_FILE = "Promus/Promus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -275,11 +481,13 @@
 		52A277581858913B00B102FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Promus/Promus-Prefix.pch";
 				INFOPLIST_FILE = "Promus/Promus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -303,6 +511,7 @@
 				52A277581858913B00B102FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
