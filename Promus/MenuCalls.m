@@ -598,12 +598,13 @@ static MenuCalls *sharedMyManager = nil;
     host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
     host_page_size(host_port, &pagesize);
     vm_statistics_data_t vm_stat;
-    if (host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size) != KERN_SUCCESS) {
+    if (host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size) != KERN_SUCCESS)
+    {
         NSLog(@"Failed to fetch vm statistics");
     }
     /* Stats in bytes */
-    natural_t mem_free = vm_stat.free_count * pagesize;
-    NSString *string7=[NSString stringWithFormat:@"%u MB", mem_free/(1024*1024)];
+    NSUInteger mem_free = vm_stat.free_count * pagesize;
+    NSString *string7=[NSString stringWithFormat:@"%lu MB", mem_free/(1024*1024)];
         NSPasteboard *pb = [NSPasteboard generalPasteboard];
         NSArray *types = [NSArray     arrayWithObjects:NSStringPboardType, nil];
         [pb declareTypes:types owner:self];

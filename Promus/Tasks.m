@@ -25,31 +25,31 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
     
-    
-    BOOL *BatchAll = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchAll"];
-    BOOL *BatchClean = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchClean"];
-    BOOL *BatchExtraTasks = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchExtraTasks"];
-    BOOL *BatchPerformPeriodicTasks = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchPerformPeriodicTasks"];
-    BOOL *BatchRepairPermissions = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchRepairPermissions"];
-    BOOL *BatchSendReport = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchSendReport"];
-    BOOL *BatchUpdatePrebindings = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchUpdatePrebindings"];
-    BOOL *BatchVerifyPreferences = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchVerifyPreferences"];
+    // # Most BOOL's not need a pointer type
+    BOOL BatchAll = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchAll"];
+    BOOL BatchClean = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchClean"];
+    BOOL BatchExtraTasks = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchExtraTasks"];
+    BOOL BatchPerformPeriodicTasks = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchPerformPeriodicTasks"];
+    BOOL BatchRepairPermissions = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchRepairPermissions"];
+    BOOL BatchSendReport = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchSendReport"];
+    BOOL BatchUpdatePrebindings = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchUpdatePrebindings"];
+    BOOL BatchVerifyPreferences = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchVerifyPreferences"];
                     
     NSString *BatchHotKey = [[NSUserDefaults standardUserDefaults] stringForKey:@"BatchClear"];
     
     //  Set up NSUserDefaults for Cache Cleaning Operations
-    BOOL *CCBrowsers = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesBrowsers"];
+    BOOL CCBrowsers = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesBrowsers"];
     
-    BOOL *CCCoreDumpFiles = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesCoreDumpFiles"];
-    BOOL *CCDockIcons = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesDockIcons"];
-    BOOL *CCKernelExtensions = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesKernelExtensions"];
-    BOOL *CCLaunchServices = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesLaunchServices"];
-    BOOL *CCLibrary = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesLibrary"];
-    BOOL *CCLookupd = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesLookupd"];
-    BOOL *CCPreferencePanes = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesPreferencePanes"];
-    BOOL *CCSystem = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesSystem"];
-    BOOL *CCUser = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesUser"];
-    BOOL *CCAll = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesAll"];
+    BOOL CCCoreDumpFiles = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesCoreDumpFiles"];
+    BOOL CCDockIcons = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesDockIcons"];
+    BOOL CCKernelExtensions = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesKernelExtensions"];
+    BOOL CCLaunchServices = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesLaunchServices"];
+    BOOL CCLibrary = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesLibrary"];
+    BOOL CCLookupd = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesLookupd"];
+    BOOL CCPreferencePanes = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesPreferencePanes"];
+    BOOL CCSystem = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesSystem"];
+    BOOL CCUser = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesUser"];
+    BOOL CCAll = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesAll"];
 
     
 //    NSFileManager *fileMgr = [NSFileManager defaultManager];

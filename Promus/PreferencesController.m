@@ -145,13 +145,14 @@ NSString* SoftwareUpdatesToolbarItemIdentifier = @"SoftwareUpdatesToolbarItem";
 //            NSLog(@"Batch is: %@", Batch);
             
             BOOL BAll = [[Batch valueForKey:@"B All"] boolValue];
-            BOOL BClean = [[Batch valueForKey:@"B Clean"] boolValue];
-            BOOL BExtraTasks = [[Batch valueForKey:@"B Extra Tasks"] boolValue];
-            BOOL BPerformPerdiodicTasks = [[Batch valueForKey:@"B Perform preiodic tasks"] boolValue];
-            BOOL BRepairPermissions = [[Batch valueForKey:@"B Repair permissions"] boolValue];
-            BOOL BSendReport = [[Batch valueForKey:@"B Send Report"] boolValue];
-            BOOL BUpdatePrebindings = [[Batch valueForKey:@"B Update prebindings"] boolValue];
-            BOOL BVerifyPreferences = [[Batch valueForKey:@"B Verify preferences"] boolValue];
+            // # to be used again!!:
+//            BOOL BClean = [[Batch valueForKey:@"B Clean"] boolValue];
+//            BOOL BExtraTasks = [[Batch valueForKey:@"B Extra Tasks"] boolValue];
+//            BOOL BPerformPerdiodicTasks = [[Batch valueForKey:@"B Perform preiodic tasks"] boolValue];
+//            BOOL BRepairPermissions = [[Batch valueForKey:@"B Repair permissions"] boolValue];
+//            BOOL BSendReport = [[Batch valueForKey:@"B Send Report"] boolValue];
+//            BOOL BUpdatePrebindings = [[Batch valueForKey:@"B Update prebindings"] boolValue];
+//            BOOL BVerifyPreferences = [[Batch valueForKey:@"B Verify preferences"] boolValue];
             
             
             NSLog(@"BAll is: %d", BAll);
@@ -200,7 +201,8 @@ NSString* SoftwareUpdatesToolbarItemIdentifier = @"SoftwareUpdatesToolbarItem";
 -(void) awakeFromNib
 {
   NSToolbar* toolbar = [[NSToolbar alloc] initWithIdentifier:@"preferencesToolbar"];
-  [toolbar setDelegate:self];
+    // # (id<NSToolbarDelegate>)self instead of just self, solved warning
+  [toolbar setDelegate:(id<NSToolbarDelegate>)self];
   NSWindow* window = [self window];
   [window setToolbar:toolbar];
   [toolbar setAllowsUserCustomization:YES];
@@ -221,7 +223,7 @@ NSString* SoftwareUpdatesToolbarItemIdentifier = @"SoftwareUpdatesToolbarItem";
 
 -(IBAction) gotoPreferencePane:(id)sender
 {
-  int tag = sender ? [sender tag] : -1;
+  NSUInteger tag = sender ? [sender tag] : -1;
   if (tag == 0)
   {
     [self selectPreferencesPaneWithItemIdentifier:GeneralToolbarItemIdentifier];

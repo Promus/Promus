@@ -94,8 +94,8 @@
 		NSLog(@"Failed to fetch vm statistics");
     }
     /* Stats in bytes */
-    natural_t mem_free = vm_stat.free_count *pagesize;
-    NSString *string7=[NSString stringWithFormat:@"RAM:               %4u MB free", mem_free/(1024*1024)];
+    NSUInteger mem_free = vm_stat.free_count *pagesize;
+    NSString *string7=[NSString stringWithFormat:@"RAM:               %4lu MB free", mem_free/(1024*1024)];
     [Item7 setTitle:string7];
 }
 
@@ -183,8 +183,8 @@
         NSLog(@"Failed to fetch vm statistics");
     }
     /* Stats in bytes */
-    natural_t mem_free = vm_stat.free_count *pagesize;
-    NSString *string7=[NSString stringWithFormat:@"RAM:              %4u MB free", mem_free/(1024*1024)];
+    NSUInteger mem_free = vm_stat.free_count *pagesize;
+    NSString *string7=[NSString stringWithFormat:@"RAM:               %4lu MB free", mem_free/(1024*1024)];
     [Item7 setTitle:string7];
 }
 
