@@ -23,14 +23,15 @@
     IBOutlet NSTableView *aTableView;
     IBOutlet NSWindow *aTableWindow;
 }
--(IBAction)loadCompanyURL:(id)sender;
--(IBAction)loadMacUpdateURL:(id)sender;
--(IBAction)loadFeedbackURL:(id)sender;
 
--(IBAction)populateTable:(NSTimer*)timer;
+-(IBAction) loadCompanyURL:(id)sender;
+-(IBAction) loadMacUpdateURL:(id)sender;
+-(IBAction) loadFeedbackURL:(id)sender;
 
--(IBAction)fireUpActivityMonitor:(id)sender;
--(IBAction)closeATableWindow:(id)sender;
+-(void) populateTable:(NSTimer*)timer;
+
+-(IBAction) fireUpActivityMonitor:(id)sender;
+-(IBAction) closeATableWindow:(id)sender;
 
 @property(assign) IBOutlet NSArrayController *myArrayController;
 
@@ -42,12 +43,9 @@
 -(IBAction)copyToClipboardFreeSpace:(id)sender;
 -(IBAction)copyToClipboardFreeRAM:(id)sender;
 
-
 -(IBAction)controlTextDidEndEditing:(id)sender;
 
 @property (assign) IBOutlet NSSearchField *mySearchField;
-
-@property (nonatomic, retain) NSString *someProperty;
 
 @property (nonatomic, retain) NSMutableArray *array4;
 

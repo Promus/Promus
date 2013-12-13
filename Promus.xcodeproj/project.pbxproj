@@ -54,6 +54,7 @@
 		52A277AE1858926700B102FF /* USE icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 52A277981858926700B102FF /* USE icon.icns */; };
 		52A277B11858927E00B102FF /* LockClose.aif in Resources */ = {isa = PBXBuildFile; fileRef = 52A277AF1858927E00B102FF /* LockClose.aif */; };
 		52A277B21858927E00B102FF /* LockOpen.aif in Resources */ = {isa = PBXBuildFile; fileRef = 52A277B01858927E00B102FF /* LockOpen.aif */; };
+		52B7E87F185B4433002087EC /* com.use-software.Promus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87E185B4433002087EC /* com.use-software.Promus.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		52A277981858926700B102FF /* USE icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "USE icon.icns"; sourceTree = "<group>"; };
 		52A277AF1858927E00B102FF /* LockClose.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = LockClose.aif; sourceTree = "<group>"; };
 		52A277B01858927E00B102FF /* LockOpen.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = LockOpen.aif; sourceTree = "<group>"; };
+		52B7E87E185B4433002087EC /* com.use-software.Promus.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "com.use-software.Promus.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 		52A277431858913B00B102FF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52B7E87E185B4433002087EC /* com.use-software.Promus.plist */,
 				52A277441858913B00B102FF /* Promus-Info.plist */,
 				52A277451858913B00B102FF /* InfoPlist.strings */,
 				52A277481858913B00B102FF /* main.m */,
@@ -356,6 +359,7 @@
 				52A277AE1858926700B102FF /* USE icon.icns in Resources */,
 				52A277B11858927E00B102FF /* LockClose.aif in Resources */,
 				52A277B21858927E00B102FF /* LockOpen.aif in Resources */,
+				52B7E87F185B4433002087EC /* com.use-software.Promus.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
