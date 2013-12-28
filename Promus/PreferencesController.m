@@ -5,11 +5,11 @@
 #import "PreferencesController.h"
 #import "PromusMenu.h"
 #import "MenuCalls.h"
+#import "SSKeychain.h"
 
 NSString* GeneralToolbarItemIdentifier = @"GeneralToolbarItem";
 NSString* CleanToolbarItemIdentifier = @"CleanToolbarItem";
 NSString* BatchToolbarItemIdentifier = @"BatchToolbarItem";
-NSString* TimerToolbarItemIdentifier = @"TimerToolbarItem";
 NSString* SecurityToolbarItemIdentifier = @"SecurityToolbarItem";
 NSString* ReportsToolbarItemIdentifier = @"ReportsToolbarItem";
 NSString* ConsoleToolbarItemIdentifier = @"ConsoleToolbarItem";
@@ -32,12 +32,12 @@ NSString* SoftwareUpdatesToolbarItemIdentifier = @"SoftwareUpdatesToolbarItem";
 
 -(NSArray*) toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar
 {
-  return [NSArray arrayWithObjects:GeneralToolbarItemIdentifier, CleanToolbarItemIdentifier, BatchToolbarItemIdentifier, TimerToolbarItemIdentifier, SecurityToolbarItemIdentifier, ReportsToolbarItemIdentifier, ConsoleToolbarItemIdentifier, SoftwareUpdatesToolbarItemIdentifier, nil];
+  return [NSArray arrayWithObjects:GeneralToolbarItemIdentifier, CleanToolbarItemIdentifier, BatchToolbarItemIdentifier, SecurityToolbarItemIdentifier, ReportsToolbarItemIdentifier, ConsoleToolbarItemIdentifier, SoftwareUpdatesToolbarItemIdentifier, nil];
 }
 
 -(NSArray*) toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar
 {
-  return [NSArray arrayWithObjects:GeneralToolbarItemIdentifier, CleanToolbarItemIdentifier, BatchToolbarItemIdentifier, TimerToolbarItemIdentifier, SecurityToolbarItemIdentifier, ReportsToolbarItemIdentifier, ConsoleToolbarItemIdentifier, SoftwareUpdatesToolbarItemIdentifier, NSToolbarCustomizeToolbarItemIdentifier, NSToolbarFlexibleSpaceItemIdentifier, NSToolbarSpaceItemIdentifier, NSToolbarSeparatorItemIdentifier, nil];
+  return [NSArray arrayWithObjects:GeneralToolbarItemIdentifier, CleanToolbarItemIdentifier, BatchToolbarItemIdentifier, SecurityToolbarItemIdentifier, ReportsToolbarItemIdentifier, ConsoleToolbarItemIdentifier, SoftwareUpdatesToolbarItemIdentifier, NSToolbarCustomizeToolbarItemIdentifier, NSToolbarFlexibleSpaceItemIdentifier, NSToolbarSpaceItemIdentifier, NSToolbarSeparatorItemIdentifier, nil];
 }
 
 -(NSArray*) toolbarSelectableItemIdentifiers:(NSToolbar*)toolbar
@@ -68,11 +68,6 @@ NSString* SoftwareUpdatesToolbarItemIdentifier = @"SoftwareUpdatesToolbarItem";
     {
       imagePath = [[NSBundle mainBundle] pathForResource:@"Batch" ofType:@"tiff"];
       label = NSLocalizedString(@"Batch", @"Batch");
-    }
-    else if ([itemIdentifier isEqualToString:TimerToolbarItemIdentifier])
-    {
-      imagePath = [[NSBundle mainBundle] pathForResource:@"Timer" ofType:@"tiff"];
-      label = NSLocalizedString(@"Timer", @"Timer");
     }
     else if ([itemIdentifier isEqualToString:SecurityToolbarItemIdentifier])
     {
@@ -108,30 +103,28 @@ NSString* SoftwareUpdatesToolbarItemIdentifier = @"SoftwareUpdatesToolbarItem";
 
 -(IBAction) toolbarHit:(id)sender
 {
-    
-    NSString *path = [@"~/Library/Preferences/com.USE-Software.Promus.plist" stringByExpandingTildeInPath];
-
-    BOOL PrefsExist=[[NSFileManager defaultManager] fileExistsAtPath:path];
-    
-    NSLog(@"PrefsExist is: %d", PrefsExist);
-    
-    NSMutableDictionary *dictionaryPlist = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
-
-    id FirstRun = [dictionaryPlist valueForKey:@"First Run"];
-    id Version = [dictionaryPlist valueForKey:@"Version"];
-    id General = [dictionaryPlist valueForKey:@"General"];
-    id CleanCaches = [dictionaryPlist valueForKey:@"Clean Caches"];
-    id CleanHistories = [dictionaryPlist valueForKey:@"Clean Histories"];
-    id CleanLogs = [dictionaryPlist valueForKey:@"Clean Logs"];
-    id Batch = [dictionaryPlist valueForKey:@"Batch"];
-    id Timer = [dictionaryPlist valueForKey:@"Timer"];
-    id Security = [dictionaryPlist valueForKey:@"Security"];
-    id Reports = [dictionaryPlist valueForKey:@"Reports"];
-    id Console = [dictionaryPlist valueForKey:@"Console"];
-    id SoftwareUpdates = [dictionaryPlist valueForKey:@"Software Updates"];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError *error;
+//    NSString *path = [@"~/Library/Preferences/com.USE-Software.Promus.plist" stringByExpandingTildeInPath];
+//
+//    BOOL PrefsExist=[[NSFileManager defaultManager] fileExistsAtPath:path];
+//    
+//    NSLog(@"PrefsExist is: %d", PrefsExist);
+//        
+//    NSMutableDictionary *dictionaryPlist = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+//
+//    id FirstRun = [dictionaryPlist valueForKey:@"First Run"];
+//    id Version = [dictionaryPlist valueForKey:@"Version"];
+//    id General = [dictionaryPlist valueForKey:@"General"];
+//    id CleanCaches = [dictionaryPlist valueForKey:@"Clean Caches"];
+//    id CleanHistories = [dictionaryPlist valueForKey:@"Clean Histories"];
+//    id CleanLogs = [dictionaryPlist valueForKey:@"Clean Logs"];
+//    id Batch = [dictionaryPlist valueForKey:@"Batch"];
+//    id Security = [dictionaryPlist valueForKey:@"Security"];
+//    id Reports = [dictionaryPlist valueForKey:@"Reports"];
+//    id Console = [dictionaryPlist valueForKey:@"Console"];
+//    id SoftwareUpdates = [dictionaryPlist valueForKey:@"Software Updates"];
+//    
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSError *error;
 
     
 //    BOOL *MyBool = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchClear"];
@@ -145,75 +138,75 @@ NSString* SoftwareUpdatesToolbarItemIdentifier = @"SoftwareUpdatesToolbarItem";
         NSLog(@"general view");
         
         // # Can be improved by just checking this condition on preference window loading
-        if (PrefsExist == 0)
-        {
-            NSString *mainBundleDataPath = [[NSBundle mainBundle] pathForResource:@"com.USE-Software.Promus" ofType:@"plist"];
-            [fileManager copyItemAtPath:mainBundleDataPath toPath:path error:&error];
-        } else
-        {
-            //  NSString *path = [[NSBundle mainBundle] pathForResource:
-            //                      @"com.USE-Software.Promus" ofType:@"plist"];
-            
-            //            NSLog(@"Batch is: %@", Batch);
-            
-            BOOL GOpenPromusWindow = [[General valueForKey:@"Open Promus window"] boolValue];
-            BOOL GPromusMenuText = [[General valueForKey:@"Promus menu text"] boolValue];
-            BOOL GOpenOnLogin = [[General valueForKey:@"Open on login"] boolValue];
-            BOOL GPromusSoundNotifications = [[General valueForKey:@"Promus sound notifications"] boolValue];
-            BOOL GPromusWindowHotKey = [[General valueForKey:@"Promus window hotkey"] boolValue];
-        }
+//        if (PrefsExist == 0)
+//        {
+//            NSString *mainBundleDataPath = [[NSBundle mainBundle] pathForResource:@"com.USE-Software.Promus" ofType:@"plist"];
+//            [fileManager copyItemAtPath:mainBundleDataPath toPath:path error:&error];
+//        } else
+//        {
+//            //  NSString *path = [[NSBundle mainBundle] pathForResource:
+//            //                      @"com.USE-Software.Promus" ofType:@"plist"];
+//            
+//            //            NSLog(@"Batch is: %@", Batch);
+//            
+//            BOOL GOpenPromusWindow = [[General valueForKey:@"Open Promus window"] boolValue];
+//            BOOL GPromusMenuText = [[General valueForKey:@"Promus menu text"] boolValue];
+//            BOOL GOpenOnLogin = [[General valueForKey:@"Open on login"] boolValue];
+//            BOOL GPromusSoundNotifications = [[General valueForKey:@"Promus sound notifications"] boolValue];
+//            BOOL GPromusWindowHotKey = [[General valueForKey:@"Promus window hotkey"] boolValue];
+//        }
     }
     
     else if ([itemIdentifier isEqualToString:CleanToolbarItemIdentifier])
     {
         view = cleanView;
         
-        if (PrefsExist == 0)
-        {
-            NSString *mainBundleDataPath = [[NSBundle mainBundle] pathForResource:@"com.USE-Software.Promus" ofType:@"plist"];
-            [fileManager copyItemAtPath:mainBundleDataPath toPath:path error:&error];
-        } else
-        {
-            //  NSString *path = [[NSBundle mainBundle] pathForResource:
-            //                      @"com.USE-Software.Promus" ofType:@"plist"];
-            
-            //            NSLog(@"Batch is: %@", Batch);
-            
-            BOOL CCBrowsers = [[CleanCaches valueForKey:@"CC Browsers"] boolValue];
-            BOOL CCCoreDumpFiles = [[CleanCaches valueForKey:@"CC Core dump Files"] boolValue];
-            BOOL CCDockIcons = [[CleanCaches valueForKey:@"CC Dock icons"] boolValue];
-            BOOL CCKernelExtensions = [[CleanCaches valueForKey:@"CC Kernel extensions"] boolValue];
-            BOOL CCLaunchServices = [[CleanCaches valueForKey:@"CC Launch services"] boolValue];
-            BOOL CCLibrary = [[CleanCaches valueForKey:@"CC Library"] boolValue];
-            BOOL CCLookupd = [[CleanCaches valueForKey:@"CC Lookupd"] boolValue];
-            BOOL CCPreferencePanes = [[CleanCaches valueForKey:@"CC Preference panes"] boolValue];
-            BOOL CCSystem = [[CleanCaches valueForKey:@"CC System"] boolValue];
-            BOOL CCUser = [[CleanCaches valueForKey:@"CC User"] boolValue];
-            
-            BOOL CHDSStores = [[CleanHistories valueForKey:@"CH .DS_Stores"] boolValue];
-            BOOL CHBrowsers = [[CleanHistories valueForKey:@"CH Browsers"] boolValue];
-            BOOL CHDVDScripts = [[CleanHistories valueForKey:@"CH DVD Scripts"] boolValue];
-            BOOL CHFindIndexes = [[CleanHistories valueForKey:@"CH Find indexes"] boolValue];
-            BOOL CHFinderPreferences = [[CleanHistories valueForKey:@"CH Finder preferences"] boolValue];
-            BOOL CHSafariDownloads = [[CleanHistories valueForKey:@"CH Safari downloads"] boolValue];
-            BOOL CHTemporaryItems = [[CleanHistories valueForKey:@"CH Temporary items"] boolValue];
-            
-            BOOL CLConsole = [[CleanLogs valueForKey:@"CL Console"] boolValue];
-            BOOL CLCrashReports = [[CleanLogs valueForKey:@"CL Crash reports"] boolValue];
-            BOOL CLNetwork = [[CleanLogs valueForKey:@"CL Network"] boolValue];
-            BOOL CLKernelPanic = [[CleanLogs valueForKey:@"CL Kernel panic"] boolValue];
-            BOOL CLLibrary = [[CleanLogs valueForKey:@"CL Library"] boolValue];
-            BOOL CLLinePrinter = [[CleanLogs valueForKey:@"CL Line printer"] boolValue];
-            BOOL CLMail = [[CleanLogs valueForKey:@"CL Mail"] boolValue];
-            BOOL CLPeriodicTasks = [[CleanLogs valueForKey:@"CL Periodic tasks"] boolValue];
-            BOOL CLPrinting = [[CleanLogs valueForKey:@"CL Printing"] boolValue];
-            BOOL CLSecurity = [[CleanLogs valueForKey:@"CL Security"] boolValue];
-            BOOL CLSystem = [[CleanLogs valueForKey:@"CL System"] boolValue];
-        }
-        
-        
-        NSString *BatchAll = [dictionaryPlist valueForKey:@"B All"];
-        NSLog(@"Batch All is: %@", BatchAll);
+//        if (PrefsExist == 0)
+//        {
+//            NSString *mainBundleDataPath = [[NSBundle mainBundle] pathForResource:@"com.USE-Software.Promus" ofType:@"plist"];
+//            [fileManager copyItemAtPath:mainBundleDataPath toPath:path error:&error];
+//        } else
+//        {
+//            //  NSString *path = [[NSBundle mainBundle] pathForResource:
+//            //                      @"com.USE-Software.Promus" ofType:@"plist"];
+//            
+//            //            NSLog(@"Batch is: %@", Batch);
+//            
+//            BOOL CCBrowsers = [[CleanCaches valueForKey:@"CC Browsers"] boolValue];
+//            BOOL CCCoreDumpFiles = [[CleanCaches valueForKey:@"CC Core dump Files"] boolValue];
+//            BOOL CCDockIcons = [[CleanCaches valueForKey:@"CC Dock icons"] boolValue];
+//            BOOL CCKernelExtensions = [[CleanCaches valueForKey:@"CC Kernel extensions"] boolValue];
+//            BOOL CCLaunchServices = [[CleanCaches valueForKey:@"CC Launch services"] boolValue];
+//            BOOL CCLibrary = [[CleanCaches valueForKey:@"CC Library"] boolValue];
+//            BOOL CCLookupd = [[CleanCaches valueForKey:@"CC Lookupd"] boolValue];
+//            BOOL CCPreferencePanes = [[CleanCaches valueForKey:@"CC Preference panes"] boolValue];
+//            BOOL CCSystem = [[CleanCaches valueForKey:@"CC System"] boolValue];
+//            BOOL CCUser = [[CleanCaches valueForKey:@"CC User"] boolValue];
+//            
+//            BOOL CHDSStores = [[CleanHistories valueForKey:@"CH .DS_Stores"] boolValue];
+//            BOOL CHBrowsers = [[CleanHistories valueForKey:@"CH Browsers"] boolValue];
+//            BOOL CHDVDScripts = [[CleanHistories valueForKey:@"CH DVD Scripts"] boolValue];
+//            BOOL CHFindIndexes = [[CleanHistories valueForKey:@"CH Find indexes"] boolValue];
+//            BOOL CHFinderPreferences = [[CleanHistories valueForKey:@"CH Finder preferences"] boolValue];
+//            BOOL CHSafariDownloads = [[CleanHistories valueForKey:@"CH Safari downloads"] boolValue];
+//            BOOL CHTemporaryItems = [[CleanHistories valueForKey:@"CH Temporary items"] boolValue];
+//            
+//            BOOL CLConsole = [[CleanLogs valueForKey:@"CL Console"] boolValue];
+//            BOOL CLCrashReports = [[CleanLogs valueForKey:@"CL Crash reports"] boolValue];
+//            BOOL CLNetwork = [[CleanLogs valueForKey:@"CL Network"] boolValue];
+//            BOOL CLKernelPanic = [[CleanLogs valueForKey:@"CL Kernel panic"] boolValue];
+//            BOOL CLLibrary = [[CleanLogs valueForKey:@"CL Library"] boolValue];
+//            BOOL CLLinePrinter = [[CleanLogs valueForKey:@"CL Line printer"] boolValue];
+//            BOOL CLMail = [[CleanLogs valueForKey:@"CL Mail"] boolValue];
+//            BOOL CLPeriodicTasks = [[CleanLogs valueForKey:@"CL Periodic tasks"] boolValue];
+//            BOOL CLPrinting = [[CleanLogs valueForKey:@"CL Printing"] boolValue];
+//            BOOL CLSecurity = [[CleanLogs valueForKey:@"CL Security"] boolValue];
+//            BOOL CLSystem = [[CleanLogs valueForKey:@"CL System"] boolValue];
+//        }
+//        
+//        
+//        NSString *BatchAll = [dictionaryPlist valueForKey:@"B All"];
+//        NSLog(@"Batch All is: %@", BatchAll);
     }
     
     else if ([itemIdentifier isEqualToString:BatchToolbarItemIdentifier])
@@ -221,31 +214,29 @@ NSString* SoftwareUpdatesToolbarItemIdentifier = @"SoftwareUpdatesToolbarItem";
         view = batchView;
         
         // # Can be improved by just checking this condition on preference window loading
-        if (PrefsExist == 0)
-        {
-            NSString *mainBundleDataPath = [[NSBundle mainBundle] pathForResource:@"com.USE-Software.Promus" ofType:@"plist"];
-            [fileManager copyItemAtPath:mainBundleDataPath toPath:path error:&error];
-        } else
-        {
-            //  NSString *path = [[NSBundle mainBundle] pathForResource:
-            //                      @"com.USE-Software.Promus" ofType:@"plist"];
-            
-            //            NSLog(@"Batch is: %@", Batch);
-            
-            BOOL BClean = [[Batch valueForKey:@"B Clean"] boolValue];
-            BOOL BHotKey = [[Batch valueForKey:@"B Hot Key"] boolValue];
-            BOOL BPerformPerdiodicTasks = [[Batch valueForKey:@"B Perform preiodic tasks"] boolValue];
-            BOOL BRepairPermissions = [[Batch valueForKey:@"B Repair permissions"] boolValue];
-            BOOL BSendReport = [[Batch valueForKey:@"B Send Report"] boolValue];
-            BOOL BUpdatePrebindings = [[Batch valueForKey:@"B Update prebindings"] boolValue];
-            BOOL BVerifyPreferences = [[Batch valueForKey:@"B Verify preferences"] boolValue];
-        }
-        
-        NSString *BatchAll = [dictionaryPlist valueForKey:@"B All"];
-        NSLog(@"Batch All is: %@", BatchAll);
+//        if (PrefsExist == 0)
+//        {
+//            NSString *mainBundleDataPath = [[NSBundle mainBundle] pathForResource:@"com.USE-Software.Promus" ofType:@"plist"];
+//            [fileManager copyItemAtPath:mainBundleDataPath toPath:path error:&error];
+//        } else
+//        {
+//            //  NSString *path = [[NSBundle mainBundle] pathForResource:
+//            //                      @"com.USE-Software.Promus" ofType:@"plist"];
+//            
+//            //            NSLog(@"Batch is: %@", Batch);
+//            
+//            BOOL BClean = [[Batch valueForKey:@"B Clean"] boolValue];
+//            BOOL BHotKey = [[Batch valueForKey:@"B Hot Key"] boolValue];
+//            BOOL BPerformPerdiodicTasks = [[Batch valueForKey:@"B Perform preiodic tasks"] boolValue];
+//            BOOL BRepairPermissions = [[Batch valueForKey:@"B Repair permissions"] boolValue];
+//            BOOL BSendReport = [[Batch valueForKey:@"B Send Report"] boolValue];
+//            BOOL BUpdatePrebindings = [[Batch valueForKey:@"B Update prebindings"] boolValue];
+//            BOOL BVerifyPreferences = [[Batch valueForKey:@"B Verify preferences"] boolValue];
+//        }
+//        
+//        NSString *BatchAll = [dictionaryPlist valueForKey:@"B All"];
+//        NSLog(@"Batch All is: %@", BatchAll);
     }
-  else if ([itemIdentifier isEqualToString:TimerToolbarItemIdentifier])
-    view = timerView;
   else if ([itemIdentifier isEqualToString:SecurityToolbarItemIdentifier])
     view = securityView;
   else if ([itemIdentifier isEqualToString:ReportsToolbarItemIdentifier])

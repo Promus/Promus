@@ -55,6 +55,17 @@
 		52A277B11858927E00B102FF /* LockClose.aif in Resources */ = {isa = PBXBuildFile; fileRef = 52A277AF1858927E00B102FF /* LockClose.aif */; };
 		52A277B21858927E00B102FF /* LockOpen.aif in Resources */ = {isa = PBXBuildFile; fileRef = 52A277B01858927E00B102FF /* LockOpen.aif */; };
 		52B7E87F185B4433002087EC /* com.use-software.Promus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87E185B4433002087EC /* com.use-software.Promus.plist */; };
+		52B7E886185F11F0002087EC /* PromusActivityMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B7E883185F11F0002087EC /* PromusActivityMonitor.m */; };
+		52B7E887185F11F0002087EC /* Snapshots.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B7E885185F11F0002087EC /* Snapshots.m */; };
+		52B7E889185F1205002087EC /* com.USE-Software.Promus.ActivityMonitorSaves.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E888185F1205002087EC /* com.USE-Software.Promus.ActivityMonitorSaves.plist */; };
+		52B7E893185F1B8C002087EC /* AMCPU.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88C185F1B8C002087EC /* AMCPU.sh */; };
+		52B7E896185F1B8C002087EC /* AMNice.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E88F185F1B8C002087EC /* AMNice.sh */; };
+		52B7E897185F1B8C002087EC /* AMProcesses.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E890185F1B8C002087EC /* AMProcesses.sh */; };
+		52B7E898185F1B8C002087EC /* AMRAM.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E891185F1B8C002087EC /* AMRAM.sh */; };
+		52C39640186DACB6007E2501 /* Keychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3963F186DACB6007E2501 /* Keychain.m */; };
+		52C39642186DAD83007E2501 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C39641186DAD83007E2501 /* SystemConfiguration.framework */; };
+		52C39644186DAD8D007E2501 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C39643186DAD8D007E2501 /* Security.framework */; };
+		52C39647186DDB4B007E2501 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C39646186DDB4B007E2501 /* SSKeychain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +128,21 @@
 		52A277AF1858927E00B102FF /* LockClose.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = LockClose.aif; sourceTree = "<group>"; };
 		52A277B01858927E00B102FF /* LockOpen.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = LockOpen.aif; sourceTree = "<group>"; };
 		52B7E87E185B4433002087EC /* com.use-software.Promus.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "com.use-software.Promus.plist"; sourceTree = "<group>"; };
+		52B7E882185F11F0002087EC /* PromusActivityMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromusActivityMonitor.h; sourceTree = "<group>"; };
+		52B7E883185F11F0002087EC /* PromusActivityMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromusActivityMonitor.m; sourceTree = "<group>"; };
+		52B7E884185F11F0002087EC /* Snapshots.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snapshots.h; sourceTree = "<group>"; };
+		52B7E885185F11F0002087EC /* Snapshots.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snapshots.m; sourceTree = "<group>"; };
+		52B7E888185F1205002087EC /* com.USE-Software.Promus.ActivityMonitorSaves.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "com.USE-Software.Promus.ActivityMonitorSaves.plist"; sourceTree = "<group>"; };
+		52B7E88C185F1B8C002087EC /* AMCPU.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = AMCPU.sh; sourceTree = "<group>"; };
+		52B7E88F185F1B8C002087EC /* AMNice.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = AMNice.sh; sourceTree = "<group>"; };
+		52B7E890185F1B8C002087EC /* AMProcesses.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = AMProcesses.sh; sourceTree = "<group>"; };
+		52B7E891185F1B8C002087EC /* AMRAM.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = AMRAM.sh; sourceTree = "<group>"; };
+		52C3963E186DACB6007E2501 /* Keychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keychain.h; sourceTree = "<group>"; };
+		52C3963F186DACB6007E2501 /* Keychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keychain.m; sourceTree = "<group>"; };
+		52C39641186DAD83007E2501 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		52C39643186DAD8D007E2501 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		52C39645186DDB4B007E2501 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		52C39646186DDB4B007E2501 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +150,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C39644186DAD8D007E2501 /* Security.framework in Frameworks */,
+				52C39642186DAD83007E2501 /* SystemConfiguration.framework in Frameworks */,
 				52A2773D1858913B00B102FF /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +179,8 @@
 		52A2773B1858913B00B102FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52C39643186DAD8D007E2501 /* Security.framework */,
+				52C39641186DAD83007E2501 /* SystemConfiguration.framework */,
 				52A2773C1858913B00B102FF /* Cocoa.framework */,
 				52A2773E1858913B00B102FF /* Other Frameworks */,
 			);
@@ -185,6 +215,7 @@
 		52A277431858913B00B102FF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52B7E888185F1205002087EC /* com.USE-Software.Promus.ActivityMonitorSaves.plist */,
 				52B7E87E185B4433002087EC /* com.use-software.Promus.plist */,
 				52A277441858913B00B102FF /* Promus-Info.plist */,
 				52A277451858913B00B102FF /* InfoPlist.strings */,
@@ -206,6 +237,14 @@
 				52A27762185891FA00B102FF /* PreferencesController.m */,
 				52A27763185891FA00B102FF /* Tasks.h */,
 				52A27764185891FA00B102FF /* Tasks.m */,
+				52B7E882185F11F0002087EC /* PromusActivityMonitor.h */,
+				52B7E883185F11F0002087EC /* PromusActivityMonitor.m */,
+				52B7E884185F11F0002087EC /* Snapshots.h */,
+				52B7E885185F11F0002087EC /* Snapshots.m */,
+				52C3963E186DACB6007E2501 /* Keychain.h */,
+				52C3963F186DACB6007E2501 /* Keychain.m */,
+				52C39645186DDB4B007E2501 /* SSKeychain.h */,
+				52C39646186DDB4B007E2501 /* SSKeychain.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -213,6 +252,10 @@
 		52A2775A185891BE00B102FF /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				52B7E88C185F1B8C002087EC /* AMCPU.sh */,
+				52B7E88F185F1B8C002087EC /* AMNice.sh */,
+				52B7E890185F1B8C002087EC /* AMProcesses.sh */,
+				52B7E891185F1B8C002087EC /* AMRAM.sh */,
 				52A277691858920500B102FF /* Temps */,
 				52A2776A1858920500B102FF /* ** Swapfile.sh */,
 				52A2776B1858920500B102FF /* CPUUsage.sh */,
@@ -360,6 +403,11 @@
 				52A277B11858927E00B102FF /* LockClose.aif in Resources */,
 				52A277B21858927E00B102FF /* LockOpen.aif in Resources */,
 				52B7E87F185B4433002087EC /* com.use-software.Promus.plist in Resources */,
+				52B7E889185F1205002087EC /* com.USE-Software.Promus.ActivityMonitorSaves.plist in Resources */,
+				52B7E893185F1B8C002087EC /* AMCPU.sh in Resources */,
+				52B7E896185F1B8C002087EC /* AMNice.sh in Resources */,
+				52B7E897185F1B8C002087EC /* AMProcesses.sh in Resources */,
+				52B7E898185F1B8C002087EC /* AMRAM.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +424,10 @@
 				52A27766185891FA00B102FF /* PromusMenu.m in Sources */,
 				52A27767185891FA00B102FF /* PreferencesController.m in Sources */,
 				52A27768185891FA00B102FF /* Tasks.m in Sources */,
+				52B7E886185F11F0002087EC /* PromusActivityMonitor.m in Sources */,
+				52B7E887185F11F0002087EC /* Snapshots.m in Sources */,
+				52C39640186DACB6007E2501 /* Keychain.m in Sources */,
+				52C39647186DDB4B007E2501 /* SSKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,9 +525,14 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Promus/Promus-Prefix.pch";
 				INFOPLIST_FILE = "Promus/Promus-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
@@ -487,9 +544,14 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Promus/Promus-Prefix.pch";
 				INFOPLIST_FILE = "Promus/Promus-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
