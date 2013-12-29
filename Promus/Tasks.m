@@ -316,5 +316,4 @@
         system("diskutil verifyPermissions > ~/PermissionsVerfication-`date +%d.%m.%y`.txt");
     }
 }
-
 @end
