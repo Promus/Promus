@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Tasks : NSObject
-- (IBAction)BatchTask:(id)sender;
+- (IBAction) BatchTask:(id)sender;
+- (IBAction) SendReport:(id)sender;
+
 @end

@@ -66,6 +66,7 @@
 		52C39642186DAD83007E2501 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C39641186DAD83007E2501 /* SystemConfiguration.framework */; };
 		52C39644186DAD8D007E2501 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C39643186DAD8D007E2501 /* Security.framework */; };
 		52C39647186DDB4B007E2501 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C39646186DDB4B007E2501 /* SSKeychain.m */; };
+		52C3964B1870912A007E2501 /* DuplicateScanner.pl in Resources */ = {isa = PBXBuildFile; fileRef = 52C3964A1870912A007E2501 /* DuplicateScanner.pl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +144,7 @@
 		52C39643186DAD8D007E2501 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		52C39645186DDB4B007E2501 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		52C39646186DDB4B007E2501 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		52C3964A1870912A007E2501 /* DuplicateScanner.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = DuplicateScanner.pl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 				52B7E890185F1B8C002087EC /* AMProcesses.sh */,
 				52B7E891185F1B8C002087EC /* AMRAM.sh */,
 				52A277691858920500B102FF /* Temps */,
+				52C3964A1870912A007E2501 /* DuplicateScanner.pl */,
 				52A2776A1858920500B102FF /* ** Swapfile.sh */,
 				52A2776B1858920500B102FF /* CPUUsage.sh */,
 				52A2776C1858920500B102FF /* Processes.sh */,
@@ -408,6 +411,7 @@
 				52B7E896185F1B8C002087EC /* AMNice.sh in Resources */,
 				52B7E897185F1B8C002087EC /* AMProcesses.sh in Resources */,
 				52B7E898185F1B8C002087EC /* AMRAM.sh in Resources */,
+				52C3964B1870912A007E2501 /* DuplicateScanner.pl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
