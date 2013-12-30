@@ -10,22 +10,36 @@
 
 @implementation Tasks
 
+-(void)buttonPressedWithSound:(id)sender
+{
+    NSSound *sound = [[NSSound alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"LockOpen" ofType:@"aif"] byReference:NO];
+    [sound play];
+}
+
 - (IBAction) BatchTask:(id)sender;
-{        
-//    NSString *path = [@"~/Library/Preferences/com.USE-Software.Promus.plist" stringByExpandingTildeInPath];
-//    
-//    BOOL PrefsExist=[[NSFileManager defaultManager] fileExistsAtPath:path];
-//    
-//    NSLog(@"PrefsExist is: %d", PrefsExist);
-//    
-//    NSMutableDictionary *dictionaryPlist = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
-//    
-//    id Batch = [dictionaryPlist valueForKey:@"Batch"];
-//    
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    NSError *error;
-//    
-//    // # Most BOOL's do not need a pointer type
+{
+    BOOL GeneralSoundNotifications = [[NSUserDefaults standardUserDefaults] boolForKey:@"GeneralSoundNotifications"];
+    
+    if (GeneralSoundNotifications == 1)
+    {
+        [self buttonPressedWithSound:(id)sender];
+    }
+    [connectingProgress startAnimation:self];
+    
+    //    NSString *path = [@"~/Library/Preferences/com.USE-Software.Promus.plist" stringByExpandingTildeInPath];
+    //
+    //    BOOL PrefsExist=[[NSFileManager defaultManager] fileExistsAtPath:path];
+    //
+    //    NSLog(@"PrefsExist is: %d", PrefsExist);
+    //
+    //    NSMutableDictionary *dictionaryPlist = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+    //
+    //    id Batch = [dictionaryPlist valueForKey:@"Batch"];
+    //
+    //    NSFileManager *fileManager = [NSFileManager defaultManager];
+    //    NSError *error;
+    //
+    //    // # Most BOOL's do not need a pointer type
     BOOL BatchClean = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchClean"];
     BOOL BatchPerformPeriodicTasks = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchPerformPeriodicTasks"];
     BOOL BatchRepairPermissions = [[NSUserDefaults standardUserDefaults] boolForKey:@"BatchRepairPermissions"];
@@ -51,7 +65,6 @@
     BOOL CCPreferencePanes = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesPreferencePanes"];
     BOOL CCSystem = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesSystem"];
     BOOL CCUser = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanCachesUser"];
-
     
     // # Set up NSUserDefaults for Log Cleaning Operations
     BOOL CLCrashReports = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanLogsCrashReports"];
@@ -74,15 +87,14 @@
     BOOL CHFinderPreferences = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanHistoriesFinderPreferences"];
     BOOL CHDSStores = [[NSUserDefaults standardUserDefaults] boolForKey:@"CleanHistoriesDSStores"];
     
-    BOOL CleanHotKey = [[NSUserDefaults standardUserDefaults] stringForKey:@"CleanHotKey"];
+    NSString *CleanHotKey = [[NSUserDefaults standardUserDefaults] stringForKey:@"CleanHotKey"];
     
-//    NSFileManager *fileMgr = [NSFileManager defaultManager];
-//    NSArray *fileArray = [fileMgr contentsOfDirectoryAtPath:directory error:nil];
-//    for (NSString *filename in fileArray)  {
-//        
-//        [fileMgr removeItemAtPath:[directory stringByAppendingPathComponent:filename] error:NULL];
-//    }
-
+    //    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    //    NSArray *fileArray = [fileMgr contentsOfDirectoryAtPath:directory error:nil];
+    //    for (NSString *filename in fileArray)  {
+    //
+    //        [fileMgr removeItemAtPath:[directory stringByAppendingPathComponent:filename] error:NULL];
+    //    }
     
     
     //  All Caches
@@ -101,7 +113,7 @@
     {
         for (int i = 0; i < [BatchCleanBrowsersArray count]; i++)
         {
-//            NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:([BatchCleanBrowsersArray objectAtIndex:i]) error:nil];
+            //            NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:([BatchCleanBrowsersArray objectAtIndex:i]) error:nil];
             
             [[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation
                                                          source:([[BatchCleanBrowsersArray objectAtIndex:i] stringByDeletingLastPathComponent])
@@ -111,14 +123,14 @@
         }
     }
     
-//    if (BatchClean == 1 && CCCoreDumpFiles == 1)
-//    {
-//            [[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation
-//                                                         source:([[BatchCleanBrowsersArray objectAtIndex:i] stringByDeletingLastPathComponent])
-//                                                    destination:@""
-//                                                          files:[NSArray arrayWithObject:[[BatchCleanBrowsersArray objectAtIndex:i] lastPathComponent]]
-//                                                            tag:nil];
-//    }
+    //    if (BatchClean == 1 && CCCoreDumpFiles == 1)
+    //    {
+    //            [[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation
+    //                                                         source:([[BatchCleanBrowsersArray objectAtIndex:i] stringByDeletingLastPathComponent])
+    //                                                    destination:@""
+    //                                                          files:[NSArray arrayWithObject:[[BatchCleanBrowsersArray objectAtIndex:i] lastPathComponent]]
+    //                                                            tag:nil];
+    //    }
     
     if (BatchClean == 1 && CCDockIcons == 1)
     {
@@ -144,7 +156,7 @@
                                                          source:([[BatchCleanBrowsersArray objectAtIndex:i] stringByDeletingLastPathComponent])
                                                     destination:@""
                                                           files:[NSArray arrayWithObject:[[BatchCleanBrowsersArray objectAtIndex:i] lastPathComponent]]
-                                                            tag:nil];   
+                                                            tag:nil];
         }
     }
     
@@ -232,20 +244,20 @@
         }
     }
     
-//    NSTask *periodicDailyTask = [[NSTask alloc] init];
-//    NSPipe *pipe1 = [[NSPipe alloc] init];
-//    NSFileHandle *handle1;
-//    NSString *resourcePath1 = [[NSBundle mainBundle] resourcePath];
-//    NSString *url1 = [[NSString alloc] initWithString:resourcePath1];
-//    url1 = [url1 stringByAppendingPathComponent:@"Processes.sh"];
-//    
-//    [periodicDailyTask setLaunchPath:url1];
-//    [periodicDailyTask setStandardOutput:pipe1];
-//    handle1 = [pipe1 fileHandleForReading];
-//    [periodicDailyTask launch];
+    //    NSTask *periodicDailyTask = [[NSTask alloc] init];
+    //    NSPipe *pipe1 = [[NSPipe alloc] init];
+    //    NSFileHandle *handle1;
+    //    NSString *resourcePath1 = [[NSBundle mainBundle] resourcePath];
+    //    NSString *url1 = [[NSString alloc] initWithString:resourcePath1];
+    //    url1 = [url1 stringByAppendingPathComponent:@"Processes.sh"];
+    //
+    //    [periodicDailyTask setLaunchPath:url1];
+    //    [periodicDailyTask setStandardOutput:pipe1];
+    //    handle1 = [pipe1 fileHandleForReading];
+    //    [periodicDailyTask launch];
     
     if (BatchPerformPeriodicTasks == 1)
-    system("security 2>&1 >/dev/null find-generic-password -ga `whoami` | sed 's/password: //g' | sed '1s/^.//' | sed s/.$// | sudo -S periodic daily weekly monthly");
+        system("security 2>&1 >/dev/null find-generic-password -ga `whoami` | sed 's/password: //g' | sed '1s/^.//' | sed s/.$// | sudo -S periodic daily weekly monthly");
     
     if (BatchSendReport == 1)
     {
@@ -269,6 +281,8 @@
     }
     // # Alternatively this, which is faster, but needs a way to write escape character \< for Objective-C
     // usr/bin/curl -f -s http://checkip.dyndns.org | grep Address | awk  '{print $6}' | cut -d \< -f 1
+    
+    [connectingProgress stopAnimation:self];
 }
 
 - (IBAction) SendReport:(id)sender
@@ -282,7 +296,7 @@
     
     if (ReportsSystemProfile == 1)
         system("system_profiler > ~/SystemProfile-`date +%d.%m.%y`.txt");
-        
+    
     if (ReportsInternalIPProfile == 1)
         system("DD=`ifconfig en1 | grep 'inet ' | awk -F: '{print $1}' | awk '{print $2}` | whois -h whois.geektools.com $DD > ~/InternalIPProfile-`date +%d.%m.%y`.txt");
     
@@ -315,5 +329,18 @@
     {
         system("diskutil verifyPermissions > ~/PermissionsVerfication-`date +%d.%m.%y`.txt");
     }
+}
+
+- (IBAction) Clean:(id)sender
+{
+    BOOL GeneralSoundNotifications = [[NSUserDefaults standardUserDefaults] boolForKey:@"GeneralSoundNotifications"];
+    
+    if (GeneralSoundNotifications == 1)
+    {
+        [self buttonPressedWithSound:(id)sender];
+    }
+    
+    [connectingProgress startAnimation:self];
+    [connectingProgress stopAnimation:self];
 }
 @end

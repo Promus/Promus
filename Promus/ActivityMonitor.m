@@ -1,17 +1,17 @@
 //
-//  PromusActivityMonitor.m
-//  PromusActivityMonitor
+//  ActivityMonitor.m
+//  ActivityMonitor
 //
 //  Created by John on 26/04/2013.
 //  Copyright (c) 2013 USE-Software. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PromusActivityMonitor.h"
+#import "ActivityMonitor.h"
 #import "Snapshots.h"
 
 
-@implementation PromusActivityMonitor
+@implementation ActivityMonitor
 
 @synthesize myArrayController;
 @synthesize myArrayController2;
@@ -21,7 +21,7 @@
 @synthesize closeButton;
 //@synthesize aTableWindow;
 
-static PromusActivityMonitor *sharedMyManager = nil;
+static ActivityMonitor *sharedMyManager = nil;
 
 @synthesize array1 = _array1;
 @synthesize array2 = _array2;

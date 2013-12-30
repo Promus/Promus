@@ -3,10 +3,10 @@
 //  Copyright © 2013 by Johannes Frotscher (Date: 23 Mar 2013).
 
 #import <Cocoa/Cocoa.h>
-#import "PreferencesController.h"
-#import "MenuCalls.h"
+#import "Preferences.h"
+#import "MenuItems.h"
 
-@interface PromusMenu : NSObject
+@interface Menulet : NSObject
 {
 NSStatusItem *statusItem;
     

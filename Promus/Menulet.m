@@ -6,12 +6,13 @@
 #import <mach/mach_host.h>
 #import <Foundation/Foundation.h>
 
-#import "PromusMenu.h"
-#import "PreferencesController.h"
-#import "MenuCalls.h"
+#import "Menulet.h"
+#import "Preferences.h"
+#import "Menulet.h"
 
 
-@implementation PromusMenu
+@implementation Menulet
+
 - (void)awakeFromNib
 {
 	statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
@@ -20,7 +21,7 @@
 	[statusItem setHighlightMode:YES];
 	[statusItem setMenu:theMenu];
 	[statusItem setEnabled:YES];
-
+    
 	[NSTimer scheduledTimerWithTimeInterval:4.5 target:self selector:@selector(datetimeThisBloodyFct) userInfo:nil repeats:YES];
 	[NSTimer scheduledTimerWithTimeInterval:4.5 target:self selector:@selector(uptimeThisBloodyFct) userInfo:nil repeats:YES];
 	[NSTimer scheduledTimerWithTimeInterval:4.5 target:self selector:@selector(ipaddressThisBloodyFct) userInfo:nil repeats:YES];
@@ -29,12 +30,12 @@
 	[NSTimer scheduledTimerWithTimeInterval:4.5 target:self selector:@selector(usedspaceThisBloodyFct) userInfo:nil repeats:YES];
     [NSTimer scheduledTimerWithTimeInterval:4.5 target:self selector:@selector(freeMemThisBloodyFct) userInfo:nil repeats:YES];
 	
-
+    
 	NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
     [DateFormatter setDateFormat:@"dd MMM, hh:mm"];
     NSString *string1=[NSString stringWithFormat:@"Date:             %12@",[DateFormatter stringFromDate:[NSDate date]]];
 	[Item1 setTitle:string1];
-
+    
     NSTimeInterval uptime = [[NSProcessInfo processInfo] systemUptime];
     NSString *string2=[NSString stringWithFormat:@"Uptime:              %6.2f days", uptime/(60*60*24)];
 	[Item2 setTitle:string2];
@@ -42,7 +43,7 @@
     NSArray *array3 = [[NSHost currentHost] addresses];
     NSString *string3=[NSString stringWithFormat:@"IP:              %12@", [array3 objectAtIndex:1]];
 	[Item3 setTitle:string3];
-
+    
 	NSTask *ls4=[[NSTask alloc] init];
 	NSPipe *pipe4=[[NSPipe alloc] init];
 	NSFileHandle *handle4;
@@ -106,7 +107,7 @@
     NSString *string1=[NSString stringWithFormat:@"Date:             %12@",[DateFormatter stringFromDate:[NSDate date]]];
 	[Item1 setTitle:string1];
 }
-	
+
 -(void)uptimeThisBloodyFct
 {
     NSTimeInterval uptime = [[NSProcessInfo processInfo] systemUptime];
@@ -119,7 +120,7 @@
     NSArray *array3 = [[NSHost currentHost] addresses];
     NSString *string3=[NSString stringWithFormat:@"IP:              %12@", [array3 objectAtIndex:1]];
 	[Item3 setTitle:string3];
-}	
+}
 
 -(void)cpuusageThisBloodyFct
 {
@@ -157,16 +158,16 @@
 
 -(void)usedspaceThisBloodyFct
 {
-        float freeSpace = 0.0f;
-        NSError *error = nil;
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error: &error];
-        
-        if (dictionary) {
-            NSNumber *fileSystemFreeSizeInBytes = [dictionary objectForKey: NSFileSystemFreeSize];
-            freeSpace = [fileSystemFreeSizeInBytes floatValue];
-        }
-        NSString *string6=[NSString stringWithFormat:@"Space:              %4.2f GB free", freeSpace/(1024*1024*1024)];
+    float freeSpace = 0.0f;
+    NSError *error = nil;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error: &error];
+    
+    if (dictionary) {
+        NSNumber *fileSystemFreeSizeInBytes = [dictionary objectForKey: NSFileSystemFreeSize];
+        freeSpace = [fileSystemFreeSizeInBytes floatValue];
+    }
+    NSString *string6=[NSString stringWithFormat:@"Space:              %4.2f GB free", freeSpace/(1024*1024*1024)];
     [Item6 setTitle:string6];
 }
 
@@ -179,7 +180,7 @@
     host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
     host_page_size(host_port, &pagesize);
     vm_statistics_data_t vm_stat;
-    if (host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size) != KERN_SUCCESS) {
+    if (host_statistics64(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size) != KERN_SUCCESS) {
         NSLog(@"Failed to fetch vm statistics");
     }
     /* Stats in bytes */

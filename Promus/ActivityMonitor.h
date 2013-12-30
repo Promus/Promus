@@ -1,6 +1,6 @@
 //
-//  PromusActivityMonitor.h
-//  PromusActivityMonitor
+//  ActivityMonitor.h
+//  ActivityMonitor
 //
 //  Copyright © 2013 by USE-Software (Date: 23 Mar 2013).
 //
@@ -8,7 +8,7 @@
 #import <Cocoa/Cocoa.h>
 #import "Snapshots.h"
 
-@interface PromusActivityMonitor : NSObject
+@interface ActivityMonitor : NSObject
 {
     IBOutlet NSTableView *aTableView;
     IBOutlet NSTableView *bTableView;
