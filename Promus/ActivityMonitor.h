@@ -2,7 +2,7 @@
 //  ActivityMonitor.h
 //  ActivityMonitor
 //
-//  Copyright © 2013 by USE-Software (Date: 23 Mar 2013).
+//  Copyright © 2014 by USE-Software (Date: 23 Mar 2013).
 //
 
 #import <Cocoa/Cocoa.h>
@@ -10,9 +10,9 @@
 
 @interface ActivityMonitor : NSObject
 {
+    IBOutlet NSWindow *aTableWindow;
     IBOutlet NSTableView *aTableView;
     IBOutlet NSTableView *bTableView;
-    IBOutlet NSWindow *aTableWindow;
 }
 
 @property (assign) IBOutlet NSButton *PromusActivityMonitorPause;

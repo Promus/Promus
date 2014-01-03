@@ -1,6 +1,6 @@
 //  PromusMenu.m
 //  Promus
-//  Copyright © 2013 by Johannes Frotscher (Date: 23 Mar 2013).
+//  Copyright © 2014 by Johannes Frotscher (Date: 23 Mar 2013).
 
 #import <mach/mach.h>
 #import <mach/mach_host.h>
@@ -16,7 +16,62 @@
 - (void)awakeFromNib
 {
 	statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-	[statusItem setTitle:[NSString stringWithFormat:@" Promus"]];
+
+    BOOL GeneralPromusMenuText = [[NSUserDefaults standardUserDefaults] boolForKey:@"GeneralPromusMenuText"];
+	BOOL GeneralMenuBarItemOnly = [[NSUserDefaults standardUserDefaults] boolForKey:@"GeneralMenuBarItemOnly"];
+    
+    if (GeneralMenuBarItemOnly == 1)
+    {
+        NSTask *ls=[[NSTask alloc] init];
+        NSPipe *pipe=[[NSPipe alloc] init];
+        NSFileHandle *handle;
+        NSString *string;
+        NSString *resourcePath=[[NSBundle mainBundle] resourcePath];
+        NSString *url=[[NSString alloc] initWithString:resourcePath];
+        url=[url stringByAppendingPathComponent:@"Dockless.sh"];
+        [ls setLaunchPath:url];
+        [ls setStandardOutput:pipe];
+        [ls setStandardError:pipe];
+        handle=[pipe fileHandleForReading];
+        [ls launch];
+        string=[[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSASCIIStringEncoding];
+        NSLog(@"Output: %@", string);
+        
+        [ActivityMonitorWindow setTarget:nil];
+        [ActivityMonitorWindow setAction:NULL];
+        [PreferencesWindow setTarget:nil];
+        [PreferencesWindow setAction:NULL];
+        [AboutWindow setTarget:nil];
+        [AboutWindow setAction:NULL];
+        [OpenPromusWindow setTarget:nil];
+        [OpenPromusWindow setAction:NULL];
+        
+    } else
+    {
+        NSTask *ls=[[NSTask alloc] init];
+        NSPipe *pipe=[[NSPipe alloc] init];
+        NSFileHandle *handle;
+        NSString *string;
+        NSString *resourcePath=[[NSBundle mainBundle] resourcePath];
+        NSString *url=[[NSString alloc] initWithString:resourcePath];
+        url=[url stringByAppendingPathComponent:@"Dockfull.sh"];
+        [ls setLaunchPath:url];
+        [ls setStandardOutput:pipe];
+        [ls setStandardError:pipe];
+        handle=[pipe fileHandleForReading];
+        [ls launch];
+        string=[[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSASCIIStringEncoding];
+        NSLog(@"Output: %@", string);
+    }
+    
+    if (GeneralPromusMenuText == 1)
+    {
+    [statusItem setTitle:[NSString stringWithFormat:@" Promus"]];
+    } else if (GeneralPromusMenuText == 0)
+    {
+        [statusItem setTitle:[NSString stringWithFormat:@""]];
+    }
+    
 	[statusItem setImage:[NSImage imageNamed:@"StatusMenuIcon.tiff"]];
 	[statusItem setHighlightMode:YES];
 	[statusItem setMenu:theMenu];
@@ -41,8 +96,21 @@
 	[Item2 setTitle:string2];
 	
     NSArray *array3 = [[NSHost currentHost] addresses];
-    NSString *string3=[NSString stringWithFormat:@"IP:              %12@", [array3 objectAtIndex:1]];
-	[Item3 setTitle:string3];
+    NSString *string3=[NSString stringWithFormat:@"IP:                  %12@", [array3 objectAtIndex:1]];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init] ;
+    [paragraphStyle setAlignment:NSRightTextAlignment];
+    
+    NSMutableAttributedString *attribString = [[NSMutableAttributedString alloc]initWithString:string3];
+    [attribString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [string3 length])];
+    
+//    NSMutableParagraphStyle * paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+//    [paragraphStyle setAlignment:NSRightTextAlignment];
+//    NSDictionary * attributes = [NSDictionary dictionaryWithObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
+//    [string3 drawInRect:NSMakeRect(0, 0, 0, 0) withAttributes:attributes];
+    
+    [Item3 setTitle:string3];
+
     
 	NSTask *ls4=[[NSTask alloc] init];
 	NSPipe *pipe4=[[NSPipe alloc] init];
@@ -81,7 +149,7 @@
         NSNumber *fileSystemFreeSizeInBytes = [dictionary objectForKey: NSFileSystemFreeSize];
         freeSpace = [fileSystemFreeSizeInBytes floatValue];
     }
-    NSString *string6=[NSString stringWithFormat:@"Space:              %4.2f GB free", freeSpace/(1024*1024*1024)];
+    NSString *string6=[NSString stringWithFormat:@"Space:            %4.2f GB free", freeSpace/(1024*1024*1024)];
     [Item6 setTitle:string6];
     
     mach_port_t host_port;
@@ -96,7 +164,7 @@
     }
     /* Stats in bytes */
     NSUInteger mem_free = vm_stat.free_count *pagesize;
-    NSString *string7=[NSString stringWithFormat:@"RAM:               %4lu MB free", mem_free/(1024*1024)];
+    NSString *string7=[NSString stringWithFormat:@"RAM:                 %4lu MB free", mem_free/(1024*1024)];
     [Item7 setTitle:string7];
 }
 
@@ -118,7 +186,14 @@
 -(void)ipaddressThisBloodyFct
 {
     NSArray *array3 = [[NSHost currentHost] addresses];
-    NSString *string3=[NSString stringWithFormat:@"IP:              %12@", [array3 objectAtIndex:1]];
+    NSString *string3=[NSString stringWithFormat:@"IP:                 %12@", [array3 objectAtIndex:1]];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init] ;
+    [paragraphStyle setAlignment:NSRightTextAlignment];
+    
+    NSMutableAttributedString *attribString = [[NSMutableAttributedString alloc]initWithString:string3];
+    [attribString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [string3 length])];
+    
 	[Item3 setTitle:string3];
 }
 
@@ -167,7 +242,7 @@
         NSNumber *fileSystemFreeSizeInBytes = [dictionary objectForKey: NSFileSystemFreeSize];
         freeSpace = [fileSystemFreeSizeInBytes floatValue];
     }
-    NSString *string6=[NSString stringWithFormat:@"Space:              %4.2f GB free", freeSpace/(1024*1024*1024)];
+    NSString *string6=[NSString stringWithFormat:@"Space:            %4.2f GB free", freeSpace/(1024*1024*1024)];
     [Item6 setTitle:string6];
 }
 
@@ -180,12 +255,12 @@
     host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
     host_page_size(host_port, &pagesize);
     vm_statistics_data_t vm_stat;
-    if (host_statistics64(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size) != KERN_SUCCESS) {
+    if (host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size) != KERN_SUCCESS) {
         NSLog(@"Failed to fetch vm statistics");
     }
     /* Stats in bytes */
     NSUInteger mem_free = vm_stat.free_count *pagesize;
-    NSString *string7=[NSString stringWithFormat:@"RAM:               %4lu MB free", mem_free/(1024*1024)];
+    NSString *string7=[NSString stringWithFormat:@"RAM:                 %4lu MB free", mem_free/(1024*1024)];
     [Item7 setTitle:string7];
 }
 

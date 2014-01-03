@@ -1,6 +1,6 @@
 //  PromusMenu.h
 //  Promus
-//  Copyright © 2013 by Johannes Frotscher (Date: 23 Mar 2013).
+//  Copyright © 2014 by Johannes Frotscher (Date: 23 Mar 2013).
 
 #import <Cocoa/Cocoa.h>
 #import "Preferences.h"
@@ -8,19 +8,24 @@
 
 @interface Menulet : NSObject
 {
-NSStatusItem *statusItem;
+    NSStatusItem *statusItem;
     
-IBOutlet NSMenu *theMenu;
+    IBOutlet NSMenu *theMenu;
 
-IBOutlet NSMenuItem *Item1;
-IBOutlet NSMenuItem *Item2;
-IBOutlet NSMenuItem *Item3;
-IBOutlet NSMenuItem *Item4;
-IBOutlet NSMenuItem *Item5;
-IBOutlet NSMenuItem *Item6;
-IBOutlet NSMenuItem *Item7;
+    IBOutlet NSMenuItem *Item1;
+    IBOutlet NSMenuItem *Item2;
+    IBOutlet NSMenuItem *Item3;
+    IBOutlet NSMenuItem *Item4;
+    IBOutlet NSMenuItem *Item5;
+    IBOutlet NSMenuItem *Item6;
+    IBOutlet NSMenuItem *Item7;
+    
+    IBOutlet NSMenuItem *ActivityMonitorWindow;
+    IBOutlet NSMenuItem *PreferencesWindow;
+    IBOutlet NSMenuItem *AboutWindow;
+    IBOutlet NSMenuItem *OpenPromusWindow;
 
-IBOutlet NSWindow *PromusInterface;
+    IBOutlet NSWindow *PromusInterface;
 }
 
 -(void) datetimeThisBloodyFct;

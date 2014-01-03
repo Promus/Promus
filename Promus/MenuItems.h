@@ -2,7 +2,7 @@
 //  MenuCalls.h
 //  Promus
 //
-//  Copyright © 2013 by Johannes Frotscher (Date: 23 Mar 2013).
+//  Copyright © 2014 by Johannes Frotscher (Date: 23 Mar 2013).
 //
 
 #import <Cocoa/Cocoa.h>

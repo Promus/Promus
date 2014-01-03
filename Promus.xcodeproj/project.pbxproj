@@ -53,6 +53,8 @@
 		52A277AD1858926700B102FF /* Timer.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A277971858926700B102FF /* Timer.tiff */; };
 		52A277B11858927E00B102FF /* LockClose.aif in Resources */ = {isa = PBXBuildFile; fileRef = 52A277AF1858927E00B102FF /* LockClose.aif */; };
 		52A277B21858927E00B102FF /* LockOpen.aif in Resources */ = {isa = PBXBuildFile; fileRef = 52A277B01858927E00B102FF /* LockOpen.aif */; };
+		52B246841874418C007AE42E /* Dockless.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52B246831874418C007AE42E /* Dockless.sh */; };
+		52B24686187599E1007AE42E /* Dockfull.sh in Resources */ = {isa = PBXBuildFile; fileRef = 52B24685187599E1007AE42E /* Dockfull.sh */; };
 		52B7E87F185B4433002087EC /* com.use-software.Promus.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52B7E87E185B4433002087EC /* com.use-software.Promus.plist */; };
 		52B7E886185F11F0002087EC /* ActivityMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B7E883185F11F0002087EC /* ActivityMonitor.m */; };
 		52B7E887185F11F0002087EC /* Snapshots.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B7E885185F11F0002087EC /* Snapshots.m */; };
@@ -123,6 +125,8 @@
 		52A277981858926700B102FF /* USE icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "USE icon.icns"; sourceTree = "<group>"; };
 		52A277AF1858927E00B102FF /* LockClose.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = LockClose.aif; sourceTree = "<group>"; };
 		52A277B01858927E00B102FF /* LockOpen.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = LockOpen.aif; sourceTree = "<group>"; };
+		52B246831874418C007AE42E /* Dockless.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = Dockless.sh; sourceTree = "<group>"; };
+		52B24685187599E1007AE42E /* Dockfull.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = Dockfull.sh; sourceTree = "<group>"; };
 		52B7E87E185B4433002087EC /* com.use-software.Promus.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "com.use-software.Promus.plist"; sourceTree = "<group>"; };
 		52B7E882185F11F0002087EC /* ActivityMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityMonitor.h; sourceTree = "<group>"; };
 		52B7E883185F11F0002087EC /* ActivityMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityMonitor.m; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 				52B7E891185F1B8C002087EC /* AMRAM.sh */,
 				52A277691858920500B102FF /* Temps */,
 				52C3964A1870912A007E2501 /* DuplicateScanner.pl */,
+				52B246831874418C007AE42E /* Dockless.sh */,
+				52B24685187599E1007AE42E /* Dockfull.sh */,
 				52A2776A1858920500B102FF /* ** Swapfile.sh */,
 				52A2776B1858920500B102FF /* CPUUsage.sh */,
 				52A2776C1858920500B102FF /* Processes.sh */,
@@ -394,6 +400,8 @@
 				52B7E898185F1B8C002087EC /* AMRAM.sh in Resources */,
 				52C3964B1870912A007E2501 /* DuplicateScanner.pl in Resources */,
 				52C396531871CC7B007E2501 /* USE icon.icns in Resources */,
+				52B246841874418C007AE42E /* Dockless.sh in Resources */,
+				52B24686187599E1007AE42E /* Dockfull.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,7 +515,7 @@
 		52A277571858913B00B102FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -529,7 +537,7 @@
 		52A277581858913B00B102FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

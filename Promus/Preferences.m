@@ -1,6 +1,6 @@
 //  PreferencesController.m
 //  Promus
-//  Copyright © 2013 by Johannes Frotscher (Date: 23 Mar 2013).
+//  Copyright © 2014 by Johannes Frotscher (Date: 23 Mar 2013).
 
 #import "Preferences.h"
 #import "Menulet.h"
@@ -21,12 +21,20 @@ NSString* SoftwareUpdatesToolbarItemIdentifier = @"SoftwareUpdatesToolbarItem";
 {
     if (![super initWithWindowNibName:@"Preferences"])
         return nil;
+
+//    NSWindowController *sw = [[NSWindowController alloc] initWithWindowNibName:@"Promus"];
+//    BOOL GeneralOpenPromusWindow = [[NSUserDefaults standardUserDefaults] boolForKey:@"GeneralOpenPromusWindow"];
+//    
+//    if (GeneralOpenPromusWindow == 1)
+//    {
+//        [[self window] orderOut:self];
+//    } else
+//    {
+//        [sw showWindow:self];
+//    }
+
     toolbarItems = [[NSMutableDictionary alloc] init];
     return self;
-}
-
--(void) dealloc
-{
 }
 
 -(NSArray*) toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar

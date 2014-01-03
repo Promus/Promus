@@ -13,6 +13,16 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+//    NSWindowController *sw = [[NSWindowController alloc] initWithWindowNibName:@"Promus"];
+//    BOOL GeneralOpenPromusWindow = [[NSUserDefaults standardUserDefaults] boolForKey:@"GeneralOpenPromusWindow"];
+//
+//    if (GeneralOpenPromusWindow == 1)
+//    {
+//        [[self window] orderOut:self];
+//    } else
+//    {
+//        [sw showWindow:self];
+//    }
 }
 
 @end

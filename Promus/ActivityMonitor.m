@@ -10,18 +10,15 @@
 #import "ActivityMonitor.h"
 #import "Snapshots.h"
 
-
 @implementation ActivityMonitor
+
+@synthesize pressedPause;
+@synthesize pressedPauseBefore;
+@synthesize closeButton;
 
 @synthesize myArrayController;
 @synthesize myArrayController2;
 @synthesize timer = _timer;
-@synthesize pressedPause;
-@synthesize pressedPauseBefore;
-@synthesize closeButton;
-//@synthesize aTableWindow;
-
-static ActivityMonitor *sharedMyManager = nil;
 
 @synthesize array1 = _array1;
 @synthesize array2 = _array2;
@@ -32,21 +29,6 @@ static ActivityMonitor *sharedMyManager = nil;
 @synthesize rows = _rows;
 @synthesize rows2 = _rows2;
 
-
-# pragma mark - Singleton Methods
-+ (id)sharedManager {
-    @synchronized(self) {
-        if(sharedMyManager == nil)
-            sharedMyManager = [[super allocWithZone:NULL] init];
-    }
-    return sharedMyManager;
-}
-+ (id)allocWithZone:(NSZone *)zone {
-    return [self sharedManager];
-}
-- (id)copyWithZone:(NSZone *)zone {
-    return self;
-}
 
 - (id)init {
     if (self = [super init]) {
