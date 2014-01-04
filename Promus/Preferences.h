@@ -22,6 +22,7 @@ extern NSString *SoftwareUpdatesToolbarItemIdentifier;
     IBOutlet NSView *securityView;
     IBOutlet NSView *reportsView;
     IBOutlet NSView *consoleView;
+    IBOutlet NSView *customizeView;
     IBOutlet NSView *softwareupdatesView;
     IBOutlet NSView *emptyView;
     NSMutableDictionary *toolbarItems;

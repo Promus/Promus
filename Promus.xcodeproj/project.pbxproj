@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520909911876AFCF00385605 /* Customize.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 520909901876AFCF00385605 /* Customize.tiff */; };
+		520909951878AEEB00385605 /* SentMailboxLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = 520909941878AEEB00385605 /* SentMailboxLarge.png */; };
 		52A2773D1858913B00B102FF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A2773C1858913B00B102FF /* Cocoa.framework */; };
 		52A277471858913B00B102FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52A277451858913B00B102FF /* InfoPlist.strings */; };
 		52A277491858913B00B102FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A277481858913B00B102FF /* main.m */; };
@@ -68,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520909901876AFCF00385605 /* Customize.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Customize.tiff; sourceTree = "<group>"; };
+		520909941878AEEB00385605 /* SentMailboxLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SentMailboxLarge.png; sourceTree = "<group>"; };
 		52A277391858913B00B102FF /* Promus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Promus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52A2773C1858913B00B102FF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		52A2773F1858913B00B102FF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -267,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				52C396521871CC7B007E2501 /* USE icon.icns */,
+				520909941878AEEB00385605 /* SentMailboxLarge.png */,
+				520909901876AFCF00385605 /* Customize.tiff */,
 				52A277831858926700B102FF /* Activity Monitor.png */,
 				52A277841858926700B102FF /* Batch Button.png */,
 				52A277851858926700B102FF /* Batch.tiff */,
@@ -402,6 +408,8 @@
 				52C396531871CC7B007E2501 /* USE icon.icns in Resources */,
 				52B246841874418C007AE42E /* Dockless.sh in Resources */,
 				52B24686187599E1007AE42E /* Dockfull.sh in Resources */,
+				520909911876AFCF00385605 /* Customize.tiff in Resources */,
+				520909951878AEEB00385605 /* SentMailboxLarge.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
