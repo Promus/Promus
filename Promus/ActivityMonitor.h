@@ -15,7 +15,7 @@
     IBOutlet NSTableView *bTableView;
 }
 
-@property (assign) IBOutlet NSButton *PromusActivityMonitorPause;
+//@property (assign) IBOutlet NSButton *PromusActivityMonitorPause;
 @property (assign) NSButton *closeButton;
 
 @property (nonatomic, retain) NSTimer *timer;
@@ -36,24 +36,19 @@
 @property (retain) NSMutableArray *extraDict;
 @property (retain) NSMutableArray *extraDict2;
 
-@property (copy) NSString *snapshots;
-
 @property BOOL pressedPause;
 @property BOOL pressedPauseBefore;
 
 - (IBAction) controlTextDidEndEditing:(id)sender;
 - (IBAction) fireUpActivityMonitor:(id)sender;
 - (IBAction) togglePause:(id)sender;
-- (IBAction) removeSnapshot:(id)sender;
-- (IBAction) addSnapshot:(id)sender;
+//- (IBAction) removeSnapshot:(id)sender;
+//- (IBAction) addSnapshot:(id)sender;
 
 - (void) updateActivityMonitorSavesArray;
 - (void) populateTable:timer;
 - (void) pauseTimer:timer;
 - (void) resumeTimer:timer;
 - (void) closeaTableWindow:(id)sender;
-
-
-+ (id) sharedManager;
 
 @end

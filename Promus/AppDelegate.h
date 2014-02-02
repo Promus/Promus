@@ -8,8 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class LogNavigatorWindowController;
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
+@property (strong) LogNavigatorWindowController *logsWindowController;
+
+- (IBAction) openConsole:(id)sender;
 
 @end

@@ -136,7 +136,7 @@
 }
 
 # pragma mark - Populate Table
-- (void)populateTable:(id)sender
+- (void)populateTable:timer
 {
     // ---------> Get the data for array1
     NSTask *ls1=[[NSTask alloc] init];
@@ -239,13 +239,15 @@
     [bTableView reloadData];
 }
 
--(IBAction)controlTextDidEndEditing:(id)sender {
-    if ([[[self mySearchField] stringValue] isEqualToString:@""]) {
-        
+-(IBAction)controlTextDidEndEditing:(id)sender
+{
+    if ([[[self mySearchField] stringValue] isEqualToString:@""])
+    {
         NSPredicate *filter = [NSPredicate predicateWithFormat:@"(Process contains[cd] Process)"];
         [myArrayController setFilterPredicate: filter];
         
-    } else {
+    } else
+    {
         NSString *_searchString = [[self mySearchField] stringValue];
         
         NSPredicate *_searchResults = [NSPredicate predicateWithFormat:@"(Process contains[cd] %@)", _searchString];
@@ -329,13 +331,15 @@
 # pragma mark - Timer
 NSDate *pauseStart, *previousFireDate;
 
--(void) pauseTimer:timer {
+-(void) pauseTimer:timer
+{
     pauseStart = [NSDate dateWithTimeIntervalSinceNow:0];
     previousFireDate = [timer fireDate];
     [timer setFireDate:[NSDate distantFuture]];
 }
 
--(void) resumeTimer:timer {
+-(void) resumeTimer:timer
+{
     float pauseTime = -1*[pauseStart timeIntervalSinceNow];
     [timer setFireDate:[previousFireDate initWithTimeInterval:pauseTime sinceDate:previousFireDate]];
 }
@@ -426,7 +430,8 @@ NSDate *pauseStart, *previousFireDate;
 }
 
 # pragma mark
-- (void)closeaTableWindow:(id)sender {
+- (void)closeaTableWindow:(id)sender
+{
 //    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 //    NSString *documentsDirectory = [paths objectAtIndex:0];
 //    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"ActivityMonitorSaves.plist"];
