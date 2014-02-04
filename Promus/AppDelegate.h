@@ -8,12 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
+// # Class definitions precourse any instantiation
 @class LogNavigatorWindowController;
+@class BuyBread;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (strong) LogNavigatorWindowController *logsWindowController;
+@property (strong) BuyBread *buyBread;
 
 - (IBAction) openConsole:(id)sender;
+- (IBAction) buyBreadDialog:(id)sender;
 
 @end

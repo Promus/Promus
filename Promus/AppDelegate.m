@@ -7,8 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "LogNavigatorWindowController.h"
 #import "PFMoveApplication.h"
+
+#import "LogNavigatorWindowController.h"
+#import "BuyBread.h"
 
 @implementation AppDelegate
 
@@ -29,12 +31,18 @@
 
     // # NSWindowController and associated xib-files need to be initialized
     self.logsWindowController = [[LogNavigatorWindowController alloc] initWithWindowNibName:@"LogNavigatorWindowController"];
+     self.buyBread = [[BuyBread alloc] initWithWindowNibName:@"BuyBread"];
 }
 
 // # Example of cross xib-file interaction (using NSWindowController)
 - (IBAction) openConsole:(id)sender
 {
     [self.logsWindowController showWindow:self];
+}
+
+- (IBAction) buyBreadDialog:(id)sender
+{
+    [self.buyBread showWindow:self];
 }
 
 @end
