@@ -1,5 +1,9 @@
 # Promus
 
+## Description
+
+A Mac handy craft for maintenance, optimization, analysis and reporting.
+
 ## Feedback
 
 You can also [contact USE-Software](http://use-software.tk/).
