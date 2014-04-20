@@ -14,7 +14,7 @@ Before you submit a bug report please read the [writing bug reports](http://kb.t
 - most features are already implemented
 - some manual work is needed
 - copy protection disabled but present
-- documentation needs to worked on
+- documentation needs to be worked on
 
 # Legal
 
