@@ -19,6 +19,11 @@ A Mac handy craft for maintenance, optimization, analysis and reporting.
 - Sparkle updates
 - PFMoveApplication
 
+## System Specs
+
+- written using XCode 4.6.2
+- tested on Mac OS X 10.6/7/8
+
 ## Feedback
 
 You can also [contact USE-Software](http://use-software.tk/).
@@ -28,6 +33,7 @@ Before you submit a bug report please read the [writing bug reports](http://kb.t
 ## Shenanigans
 - most features are already implemented
 - some manual work is needed
+- a few warnings persist, but it'll work perfectly
 - copy protection disabled but present
 - documentation needs to be worked on
 
