@@ -4,6 +4,19 @@
 
 A Mac handy craft for maintenance, optimization, analysis and reporting.
 
+- independent native preference pane
+- interactive status bar menulet with various stats and actions
+- remote control like main window with stats
+- faster and less resources-consuming activity monitor
+- faster and less resources-consuming log viewer
+- external and internal IP profiling report
+- System Profiling report
+- mailing system for reports
+- CPU Temperature Monitor
+- batch and cleaning tasks via prefs settings
+- Sparkle Updates
+- PFMoveApplication
+
 ## Feedback
 
 You can also [contact USE-Software](http://use-software.tk/).
