@@ -10,11 +10,11 @@ A Mac handy craft for maintenance, optimization, analysis and reporting.
 - faster and less resources-consuming activity monitor
 - faster and less resources-consuming log viewer
 - external and internal IP profiling report
-- System Profiling report
+- system profiling report
 - mailing system for reports
-- CPU Temperature Monitor
+- CPU temperature monitor
 - batch and cleaning tasks via prefs settings
-- Sparkle Updates
+- Sparkle updates
 - PFMoveApplication
 
 ## Feedback
