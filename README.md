@@ -6,7 +6,7 @@ A Mac handy craft for maintenance, optimization, analysis and reporting.
 
 - independent native preference pane
 - interactive status bar menulet with various stats and actions
-- remote control like main window with stats
+- remote control like main window with stats using bash scripts
 - faster and less resources-consuming activity monitor
 - faster and less resources-consuming log viewer
 - external and internal IP profiling report
@@ -14,6 +14,8 @@ A Mac handy craft for maintenance, optimization, analysis and reporting.
 - mailing system for reports
 - CPU temperature monitor
 - batch and cleaning tasks via prefs settings
+- maintenance e.g. UNIX periodic tasks
+- duplicate finder written in Perl
 - Sparkle updates
 - PFMoveApplication
 
