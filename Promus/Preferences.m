@@ -3,8 +3,6 @@
 //  Copyright © 2014 by Johannes Frotscher (Date: 23 Mar 2013).
 
 #import "Preferences.h"
-#import "Menulet.h"
-#import "MenuItems.h"
 
 NSString* GeneralToolbarItemIdentifier = @"GeneralToolbarItem";
 NSString* CleanToolbarItemIdentifier = @"CleanToolbarItem";

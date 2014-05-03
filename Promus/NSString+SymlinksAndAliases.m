@@ -207,7 +207,7 @@
 	NSString *resolvedPath = nil;
 
 	CFURLRef url = CFURLCreateWithFileSystemPath
-		(kCFAllocatorDefault, (CFStringRef)self, kCFURLPOSIXPathStyle, NO);
+		(kCFAllocatorDefault, (__bridge CFStringRef)self, kCFURLPOSIXPathStyle, NO);
 	if (url != NULL)
 	{
 		FSRef fsRef;
@@ -221,9 +221,7 @@
 				CFURLRef resolvedUrl = CFURLCreateFromFSRef(kCFAllocatorDefault, &fsRef);
 				if (resolvedUrl != NULL)
 				{
-					resolvedPath =
-						[(id)NSMakeCollectable(CFURLCopyFileSystemPath(resolvedUrl, kCFURLPOSIXPathStyle))
-							autorelease];
+					resolvedPath = (id)CFBridgingRelease(CFURLCopyFileSystemPath(resolvedUrl, kCFURLPOSIXPathStyle));
 					CFRelease(resolvedUrl);
 				}
 			}
