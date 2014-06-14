@@ -93,7 +93,7 @@
 		52204ED5189E7FF6002BD34E /* BuyBread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyBread.h; sourceTree = "<group>"; };
 		52204ED6189E7FF7002BD34E /* BuyBread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyBread.m; sourceTree = "<group>"; };
 		52204ED7189E7FF8002BD34E /* BuyBread.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyBread.xib; sourceTree = "<group>"; };
-		525422C519152ED900476112 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../../System/Library/Frameworks/Security.framework; sourceTree = "<group>"; };
+		525422C519152ED900476112 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		525422C919152FF400476112 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		52A277391858913B00B102FF /* Promus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Promus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52A2773C1858913B00B102FF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -198,7 +198,6 @@
 		52A277301858913B00B102FF = {
 			isa = PBXGroup;
 			children = (
-				525422C519152ED900476112 /* Security.framework */,
 				52A277421858913B00B102FF /* Promus */,
 				52A2773B1858913B00B102FF /* Frameworks */,
 				52A2773A1858913B00B102FF /* Products */,
@@ -216,6 +215,7 @@
 		52A2773B1858913B00B102FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				525422C519152ED900476112 /* Security.framework */,
 				52A2773C1858913B00B102FF /* Cocoa.framework */,
 				52A2773E1858913B00B102FF /* Other Frameworks */,
 			);

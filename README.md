@@ -1,4 +1,6 @@
 # Promus
+![Status Menulet](https://github.com/Promus/Promus/blob/master/Screenshots/Status%20Menulet.png)
+![Preferences - Reports](https://github.com/Promus/Promus/blob/master/Screenshots/Preferences%20-%20General.png)
 
 ## Description
 
